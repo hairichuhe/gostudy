@@ -7,7 +7,7 @@ import (
 	"net/mail"
 	"net/smtp"
 
-	"github.com/PuerkitoBio/goquery"
+	"github.com/opesun/goquery"
 )
 
 func SendToEvernote(user, password, host, to, subject, body string) error {
@@ -27,7 +27,7 @@ func SendToEvernote(user, password, host, to, subject, body string) error {
 	header["Content-Transfer-Encoding"] = "base64"
 
 	message := ""
-	for k, b := range header {
+	for k, v := range header {
 		message += fmt.Sprintf("%s:%s\r\n", k, v)
 	}
 	message += "\r\n" + b64.EncodeToString([]byte(body))
