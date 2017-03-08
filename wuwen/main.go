@@ -3,10 +3,10 @@ package main
 
 import (
 	"fmt"
-	"utils/path"
+	"net/url"
 )
 
 func main() {
-	s, _ := path.GetCurrentPath()
-	fmt.Println(s)
+	s := "毛泽东"
+	fmt.Println(url.QueryEscape(s))
 }

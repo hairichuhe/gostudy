@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"net/url"
 	"os"
 	"strings"
 	"utils/path"
@@ -19,7 +20,7 @@ import (
 func toUrl(a []string) []string {
 	tempUrl := make([]string, 256)
 	for _, word := range a {
-		tempUrl = append(tempUrl, "http://cn.bing.com/search?q="+word+"&go=搜索&qs=bs&form=QBRE")
+		tempUrl = append(tempUrl, "http://cn.bing.com/search?q="+url.QueryEscape(word)+"&go=%E6%90%9C%E7%B4%A2&qs=bs&form=QBRE")
 	}
 	return tempUrl
 }
