@@ -24,7 +24,7 @@ type sqlModel struct {
 }
 
 func init() {
-	db, _ = sql.Open("mysql", "root:root@tcp(localhost:3306)/api?charset=utf8")
+	db, _ = sql.Open("mysql", "hairichuhe:520wsy@tcp(db4free.net:3306)/hairichuhe?charset=utf8")
 	db.SetMaxOpenConns(200)
 	db.SetMaxIdleConns(100)
 	db.Ping()
@@ -43,9 +43,9 @@ func index(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	if len(r.Form["ip"]) > 0 {
 		sql.ip = r.Form["ip"][0]
-		result := getIp(r.Form["ip"][0])
 		locationstr := query(r.Form["ip"][0])
-		if locationstr != "" {
+		if len(locationstr) == 0 {
+			result := getIp(r.Form["ip"][0])
 			sql.city = handleStr(result, "\"city\":\"")
 			sql.province = handleStr(result, "\"province\":\"")
 			sql.rectangle = handleStr(result, "\"rectangle\":\"")
@@ -107,19 +107,13 @@ func insert(sql sqlModel) {
 
 func query(ip string) string {
 	var location string
-	rows, err := db.Query("SELECT * FROM ip_location WHERE ip='" + ip + "'")
+	rows, err := db.Query("SELECT location FROM ip_location WHERE ip='" + ip + "'")
 	defer rows.Close()
 	checkErr(err)
 
 	for rows.Next() {
-		var id int
-		var ip string
-		var city string
-		var province string
-		var citycode string
-		var rectangle string
 		rows.Columns()
-		err = rows.Scan(&id, &ip, &city, &province, &location, &citycode, &rectangle)
+		err = rows.Scan(&location)
 		checkErr(err)
 
 		break
