@@ -15,16 +15,14 @@ import (
 var db *sql.DB
 
 type sqlModel struct {
-	ip        string
-	city      string
-	province  string
-	location  string
-	citycode  string
-	rectangle string
+	ip       string
+	city     string
+	country  string
+	location string
 }
 
 func init() {
-	db, _ = sql.Open("mysql", "hairichuhe:520wsy@tcp(db4free.net:3306)/hairichuhe?charset=utf8")
+	db, _ = sql.Open("mysql", "root:root@tcp(192.168.0.231:3306)/safedata?charset=utf8")
 	db.SetMaxOpenConns(200)
 	db.SetMaxIdleConns(100)
 	db.Ping()
@@ -47,10 +45,8 @@ func index(w http.ResponseWriter, r *http.Request) {
 		if len(locationstr) == 0 {
 			result := getIp(r.Form["ip"][0])
 			sql.city = handleStr(result, "\"city\":\"")
-			sql.province = handleStr(result, "\"province\":\"")
-			sql.rectangle = handleStr(result, "\"rectangle\":\"")
+			sql.country = "China"
 			locationstr := getLoaction(sql.city)
-			sql.citycode = handleStr(locationstr, "\"citycode\":\"")
 			sql.location = handleStr(locationstr, "\"location\":\"")
 			insert(sql)
 			fmt.Fprintf(w, sql.location)
