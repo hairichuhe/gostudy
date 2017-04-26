@@ -1,0 +1,399 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url("/static/fonts/one.ttf"), url("/static/fonts/TRENDS.woff") format("woff"); }
+@media screen and (max-width: 1900px) {
+  body .container .content .a-b .hide {
+    display: none; } }
+.container .content {
+  width: calc(100vw - 210px - (100vw - 100%));
+  height: auto;
+  min-width: 1156px;
+  overflow-x: auto;
+  background-color: transparent; }
+  .container .content .a-h {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 2px 2px #999;
+    background-color: #eff2f8;
+    padding-left: 39px;
+    box-sizing: border-box; }
+    .container .content .a-h .h-b, .container .content .a-h .bl {
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+      text-align: center;
+      box-sizing: border-box;
+      float: left;
+      cursor: pointer; }
+      .container .content .a-h .h-b span, .container .content .a-h .bl span, .container .content .a-h .h-b .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .container .content .a-h .h-b select, .container .content .a-h .bl .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .container .content .a-h .bl select, .container .content .a-h .h-b .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .container .content .a-h .h-b select, .container .content .a-h .bl .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .container .content .a-h .bl select, .container .content .a-h .h-b .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .container .content .a-h .h-b select, .container .content .a-h .bl .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .container .content .a-h .bl select, .container .content .a-h .h-b .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .container .content .a-h .h-b select, .container .content .a-h .bl .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .container .content .a-h .bl select, .container .content .a-h .h-b .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .container .content .a-h .h-b select, .container .content .a-h .bl .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .container .content .a-h .bl select {
+        height: 25px;
+        width: 100%;
+        display: block;
+        line-height: 25px; }
+      .container .content .a-h .h-b .span1, .container .content .a-h .bl .span1 {
+        color: #333; }
+      .container .content .a-h .h-b .span2, .container .content .a-h .bl .span2 {
+        color: #dc2828; }
+    .container .content .a-h .bl {
+      background-color: #5ab1ef;
+      margin: 10px 20px;
+      width: 140px; }
+      .container .content .a-h .bl .span1 {
+        color: #fff; }
+      .container .content .a-h .bl .span2 {
+        color: #ecfd59; }
+    .container .content .a-h .h-r {
+      float: right;
+      width: 720px;
+      height: 50px;
+      margin-top: 20px;
+      padding: 4px 15px;
+      box-sizing: border-box; }
+      .container .content .a-h .h-r span, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .container .content .a-h .h-r select, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .container .content .a-h .h-r select, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .container .content .a-h .h-r select, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .container .content .a-h .h-r select, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .container .content .a-h .h-r select {
+        width: 140px;
+        height: 26px;
+        line-height: 26px;
+        background-color: #5ab1ef;
+        text-align: left;
+        color: #fff;
+        cursor: pointer;
+        margin: 8px 5px;
+        border-radius: 4px; }
+        .container .content .a-h .h-r span .btn-i, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select .btn-i, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .container .content .a-h .h-r select .btn-i, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select .btn-i, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .container .content .a-h .h-r select .btn-i, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select .btn-i, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .container .content .a-h .h-r select .btn-i, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select .btn-i, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .container .content .a-h .h-r select .btn-i, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select .btn-i, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .container .content .a-h .h-r select .btn-i {
+          background: url("/static/img/icon.png") -189px 3px;
+          width: 24px;
+          height: 24px;
+          margin: 1px 6px;
+          float: left; }
+        .container .content .a-h .h-r span .btn-i1, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select .btn-i1, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .container .content .a-h .h-r select .btn-i1, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select .btn-i1, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .container .content .a-h .h-r select .btn-i1, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select .btn-i1, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .container .content .a-h .h-r select .btn-i1, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select .btn-i1, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .container .content .a-h .h-r select .btn-i1, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select .btn-i1, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .container .content .a-h .h-r select .btn-i1 {
+          background: url("/static/img/icon.png") -213px 3px;
+          width: 24px;
+          height: 24px;
+          margin: 1px 6px;
+          float: left; }
+        .container .content .a-h .h-r span .btn-i2, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select .btn-i2, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .container .content .a-h .h-r select .btn-i2, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select .btn-i2, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .container .content .a-h .h-r select .btn-i2, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select .btn-i2, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .container .content .a-h .h-r select .btn-i2, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select .btn-i2, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .container .content .a-h .h-r select .btn-i2, .container .content .a-h .h-r .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select .btn-i2, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .container .content .a-h .h-r select .btn-i2 {
+          background: url("/static/img/icon.png") -236px 5px;
+          width: 24px;
+          height: 24px;
+          margin: 1px 6px;
+          float: left; }
+      .container .content .a-h .h-r .search {
+        border: 1px solid #d4e4f1;
+        width: 190px;
+        height: 22px;
+        box-sizing: border-box;
+        float: left;
+        background-color: #fff;
+        margin: 10px 0 10px 20px; }
+        .container .content .a-h .h-r .search input, .container .content .a-h .h-r .search .form .f-c .bt-rr select, .form .f-c .bt-rr .container .content .a-h .h-r .search select, .container .content .a-h .h-r .search .form .f-c .c-b .b-table .b-table1 .bt-r select, .form .f-c .c-b .b-table .b-table1 .bt-r .container .content .a-h .h-r .search select, .container .content .a-h .h-r .search .form .f-c .c-b .b-table .b-table2 .bt-r select, .form .f-c .c-b .b-table .b-table2 .bt-r .container .content .a-h .h-r .search select, .container .content .a-h .h-r .search .form .f-c .c-b .b-table .b-table3 .bt-r select, .form .f-c .c-b .b-table .b-table3 .bt-r .container .content .a-h .h-r .search select, .container .content .a-h .h-r .search .form .f-c .c-b .b-table .b-table4 .bt-r select, .form .f-c .c-b .b-table .b-table4 .bt-r .container .content .a-h .h-r .search select, .container .content .a-h .h-r .search .form .f-c .c-b .b-table .b-table5 .bt-r select, .form .f-c .c-b .b-table .b-table5 .bt-r .container .content .a-h .h-r .search select {
+          border: none;
+          width: 170px;
+          height: 20px;
+          float: left;
+          outline: none;
+          padding: 0; }
+        .container .content .a-h .h-r .search i {
+          width: 14px;
+          height: 14px;
+          float: left;
+          margin: 3px 0; }
+  .container .content .a-b1 {
+    width: 99%;
+    margin: 0.5%;
+    background-color: #f2eff8;
+    box-shadow: 0 2px 2px #999;
+    display: flex;
+    border-radius: 2px;
+    height: 70px; }
+    .container .content .a-b1 .b-icon, .container .content .a-b1 .b-icon1, .container .content .a-b1 .b-icon2, .container .content .a-b1 .b-icon3 {
+      background: url("/static/img/icon.png") no-repeat 9px -115px;
+      width: 40px;
+      height: 40px;
+      margin: 15px 40px; }
+    .container .content .a-b1 .b-icon1 {
+      background: url("/static/img/icon.png") no-repeat -36px -115px; }
+    .container .content .a-b1 .b-icon2 {
+      background: url("/static/img/icon.png") no-repeat -76px -115px; }
+    .container .content .a-b1 .b-icon3 {
+      background: url("/static/img/icon.png") no-repeat -116px -115px; }
+    .container .content .a-b1 .b-b {
+      flex: 2;
+      height: 60px;
+      margin: 5px;
+      max-width: 11%; }
+      .container .content .a-b1 .b-b .b-t, .container .content .a-b1 .b-b .b-bt .b-tt, .container .content .a-b1 .b-bt .b-b .b-tt {
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        font-size: 12px;
+        color: #8b909f;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden; }
+        .container .content .a-b1 .b-b .b-t span, .container .content .a-b1 .b-b .b-bt .b-tt span, .container .content .a-b1 .b-bt .b-b .b-tt span, .container .content .a-b1 .b-b .b-t .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .container .content .a-b1 .b-b .b-t select, .container .content .a-b1 .b-b .b-bt .b-tt .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .container .content .a-b1 .b-b .b-bt .b-tt select, .container .content .a-b1 .b-bt .b-b .b-tt .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .container .content .a-b1 .b-bt .b-b .b-tt select, .container .content .a-b1 .b-b .b-t .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .container .content .a-b1 .b-b .b-t select, .container .content .a-b1 .b-b .b-bt .b-tt .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .container .content .a-b1 .b-b .b-bt .b-tt select, .container .content .a-b1 .b-bt .b-b .b-tt .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .container .content .a-b1 .b-bt .b-b .b-tt select, .container .content .a-b1 .b-b .b-t .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .container .content .a-b1 .b-b .b-t select, .container .content .a-b1 .b-b .b-bt .b-tt .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .container .content .a-b1 .b-b .b-bt .b-tt select, .container .content .a-b1 .b-bt .b-b .b-tt .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .container .content .a-b1 .b-bt .b-b .b-tt select, .container .content .a-b1 .b-b .b-t .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .container .content .a-b1 .b-b .b-t select, .container .content .a-b1 .b-b .b-bt .b-tt .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .container .content .a-b1 .b-b .b-bt .b-tt select, .container .content .a-b1 .b-bt .b-b .b-tt .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .container .content .a-b1 .b-bt .b-b .b-tt select, .container .content .a-b1 .b-b .b-t .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .container .content .a-b1 .b-b .b-t select, .container .content .a-b1 .b-b .b-bt .b-tt .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .container .content .a-b1 .b-b .b-bt .b-tt select, .container .content .a-b1 .b-bt .b-b .b-tt .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .container .content .a-b1 .b-bt .b-b .b-tt select {
+          display: block;
+          float: left; }
+        .container .content .a-b1 .b-b .b-t .yes, .container .content .a-b1 .b-b .b-bt .b-tt .yes, .container .content .a-b1 .b-bt .b-b .b-tt .yes, .container .content .a-b1 .b-b .b-t .no, .container .content .a-b1 .b-b .b-bt .b-tt .no, .container .content .a-b1 .b-bt .b-b .b-tt .no {
+          display: block;
+          width: 30px;
+          height: 16px;
+          border-radius: 8px;
+          line-height: 16px;
+          padding: 0 5px;
+          margin: 7px 10px;
+          text-align: center;
+          background-color: #78c16c;
+          color: #fff;
+          float: left; }
+        .container .content .a-b1 .b-b .b-t .no, .container .content .a-b1 .b-b .b-bt .b-tt .no, .container .content .a-b1 .b-bt .b-b .b-tt .no {
+          background-color: #869b80; }
+    .container .content .a-b1 .b-bt {
+      flex: 2;
+      height: 60px;
+      margin: 5px;
+      border-left: 1px solid #cdcbd3;
+      padding-left: 20px;
+      max-width: 11%; }
+      .container .content .a-b1 .b-bt .b-t, .container .content .a-b1 .b-bt .b-tt {
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        color: #000;
+        font-weight: bold;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden; }
+      .container .content .a-b1 .b-bt .b-tt {
+        color: #7a859f; }
+    .container .content .a-b1 .b-r {
+      width: 100px;
+      height: 60px;
+      margin: 5px 10px;
+      padding: 18px 38px;
+      box-sizing: border-box;
+      position: absolute;
+      border-left: 1px solid #cdcbd3;
+      right: 50px; }
+      .container .content .a-b1 .b-r .r-icon {
+        background: url("/static/img/icon.png") no-repeat -166px 2px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer; }
+      .container .content .a-b1 .b-r .n-btn {
+        background-color: #f42a3d;
+        height: 24px;
+        width: 90px;
+        line-height: 24px;
+        border-radius: 3px;
+        text-align: center;
+        color: #fff;
+        cursor: pointer; }
+
+.form .fh {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  margin: 10px 0;
+  box-sizing: border-box; }
+  .form .fh span, .form .fh .f-c .c-b .b-table .b-table1 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .fh select, .form .fh .f-c .c-b .b-table .b-table2 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .fh select, .form .fh .f-c .c-b .b-table .b-table3 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .fh select, .form .fh .f-c .c-b .b-table .b-table4 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .fh select, .form .fh .f-c .c-b .b-table .b-table5 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .fh select {
+    height: 30px;
+    line-height: 30px;
+    font-size: 22px;
+    font-weight: bold; }
+  .form .fh i {
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    cursor: pointer; }
+.form .l, .form .r {
+  width: 50%;
+  height: 300px;
+  float: left;
+  background-color: transparent; }
+  .form .l .k, .form .r .k {
+    width: 100%;
+    height: 285px;
+    margin-top: 15px;
+    border: 1px solid #d4e4f1; }
+    .form .l .k .k-h, .form .r .k .k-h {
+      width: 96%;
+      padding: 0 2%;
+      height: 30px;
+      border-bottom: 1px solid #d4e4f1; }
+    .form .l .k .k-b, .form .r .k .k-b {
+      width: 96%;
+      margin: 0 2%;
+      height: 30px;
+      border-bottom: 1px solid #d4e4f1; }
+    .form .l .k .kdiv, .form .r .k .kdiv {
+      height: 30px;
+      line-height: 30px;
+      float: left;
+      color: #0a0a0a; }
+    .form .l .k .k-w, .form .r .k .k-w {
+      width: 5%;
+      height: 28px;
+      margin: 1px 0; }
+    .form .l .k .k-w1, .form .r .k .k-w1 {
+      width: 55%; }
+    .form .l .k .k-w2, .form .r .k .k-w2 {
+      width: 25%; }
+    .form .l .k .k-w3, .form .r .k .k-w3 {
+      width: 15%; }
+    .form .l .k .kb, .form .r .k .kb {
+      font-weight: bold; }
+    .form .l .k .kred div, .form .r .k .kred div {
+      color: red; }
+    .form .l .k .kgray div, .form .r .k .kgray div {
+      color: #999; }
+.form .f-c {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box; }
+  .form .f-c .bt-rr {
+    float: left;
+    height: 26px;
+    line-height: 26px;
+    width: 100%;
+    margin-top: 10px;
+    text-align: right; }
+    .form .f-c .bt-rr input, .form .f-c .bt-rr select, .form .f-c .bt-rr .c-b .b-table .b-table1 .bt-r select, .form .f-c .c-b .b-table .b-table1 .bt-r .bt-rr select, .form .f-c .bt-rr .c-b .b-table .b-table2 .bt-r select, .form .f-c .c-b .b-table .b-table2 .bt-r .bt-rr select, .form .f-c .bt-rr .c-b .b-table .b-table3 .bt-r select, .form .f-c .c-b .b-table .b-table3 .bt-r .bt-rr select, .form .f-c .bt-rr .c-b .b-table .b-table4 .bt-r select, .form .f-c .c-b .b-table .b-table4 .bt-r .bt-rr select, .form .f-c .bt-rr .c-b .b-table .b-table5 .bt-r select, .form .f-c .c-b .b-table .b-table5 .bt-r .bt-rr select {
+      width: 60%;
+      height: 26px;
+      line-height: 26px;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      float: left;
+      color: #333; }
+    .form .f-c .bt-rr span, .form .f-c .bt-rr .c-b .b-table .b-table1 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .bt-rr select, .form .f-c .bt-rr .c-b .b-table .b-table2 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .bt-rr select, .form .f-c .bt-rr .c-b .b-table .b-table3 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .bt-rr select, .form .f-c .bt-rr .c-b .b-table .b-table4 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .bt-rr select, .form .f-c .bt-rr .c-b .b-table .b-table5 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .bt-rr select {
+      margin-left: 20px;
+      display: block;
+      float: left;
+      height: 26px;
+      line-height: 26px;
+      color: #979191;
+      font-style: italic; }
+    .form .f-c .bt-rr button {
+      padding: 2px 10px;
+      background-color: #908c8c;
+      margin: 0 10px;
+      color: #fff; }
+  .form .f-c .c-b {
+    width: 100%;
+    float: left;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box; }
+    .form .f-c .c-b .b-left, .form .f-c .c-b .b-right, .form .f-c .c-b .b-table .b-table1 .bt-l, .form .f-c .c-b .b-table .b-table2 .bt-l, .form .f-c .c-b .b-table .b-table3 .bt-l, .form .f-c .c-b .b-table .b-table4 .bt-l, .form .f-c .c-b .b-table .b-table5 .bt-l, .form .f-c .c-b .b-table .b-table1 .bt-r, .form .f-c .c-b .b-table .b-table2 .bt-r, .form .f-c .c-b .b-table .b-table3 .bt-r, .form .f-c .c-b .b-table .b-table4 .bt-r, .form .f-c .c-b .b-table .b-table5 .bt-r {
+      width: 80px;
+      float: left;
+      height: 26px;
+      line-height: 26px;
+      margin: 5px 0;
+      text-align: right; }
+    .form .f-c .c-b .b-right {
+      width: 1099px; }
+      .form .f-c .c-b .b-right input:checked .b-table, .form .f-c .c-b .b-right .bt-rr select:checked .b-table, .form .f-c .bt-rr .c-b .b-right select:checked .b-table, .form .f-c .c-b .b-right .b-table .b-table1 .bt-r select:checked .b-table, .form .f-c .c-b .b-table .b-table1 .bt-r .b-right select:checked .b-table, .form .f-c .c-b .b-right .b-table .b-table2 .bt-r select:checked .b-table, .form .f-c .c-b .b-table .b-table2 .bt-r .b-right select:checked .b-table, .form .f-c .c-b .b-right .b-table .b-table3 .bt-r select:checked .b-table, .form .f-c .c-b .b-table .b-table3 .bt-r .b-right select:checked .b-table, .form .f-c .c-b .b-right .b-table .b-table4 .bt-r select:checked .b-table, .form .f-c .c-b .b-table .b-table4 .bt-r .b-right select:checked .b-table, .form .f-c .c-b .b-right .b-table .b-table5 .bt-r select:checked .b-table, .form .f-c .c-b .b-table .b-table5 .bt-r .b-right select:checked .b-table {
+        width: 300px; }
+    .form .f-c .c-b .b-table {
+      width: 100%;
+      float: left; }
+      .form .f-c .c-b .b-table .b-table1, .form .f-c .c-b .b-table .b-table2, .form .f-c .c-b .b-table .b-table3, .form .f-c .c-b .b-table .b-table4, .form .f-c .c-b .b-table .b-table5 {
+        display: block;
+        width: 100%;
+        float: left;
+        position: relative; }
+        .form .f-c .c-b .b-table .b-table1 .bt-r, .form .f-c .c-b .b-table .b-table2 .bt-r, .form .f-c .c-b .b-table .b-table3 .bt-r, .form .f-c .c-b .b-table .b-table4 .bt-r, .form .f-c .c-b .b-table .b-table5 .bt-r {
+          width: 87%;
+          position: relative; }
+          .form .f-c .c-b .b-table .b-table1 .bt-r input, .form .f-c .c-b .b-table .b-table2 .bt-r input, .form .f-c .c-b .b-table .b-table3 .bt-r input, .form .f-c .c-b .b-table .b-table4 .bt-r input, .form .f-c .c-b .b-table .b-table5 .bt-r input, .form .f-c .c-b .b-table .b-table1 .bt-r select, .form .f-c .c-b .b-table .b-table2 .bt-r select, .form .f-c .c-b .b-table .b-table3 .bt-r select, .form .f-c .c-b .b-table .b-table4 .bt-r select, .form .f-c .c-b .b-table .b-table5 .bt-r select {
+            width: 55%;
+            height: 26px;
+            line-height: 26px;
+            padding: 5px 10px;
+            box-sizing: border-box;
+            float: left;
+            color: #333; }
+          .form .f-c .c-b .b-table .b-table1 .bt-r label, .form .f-c .c-b .b-table .b-table2 .bt-r label, .form .f-c .c-b .b-table .b-table3 .bt-r label, .form .f-c .c-b .b-table .b-table4 .bt-r label, .form .f-c .c-b .b-table .b-table5 .bt-r label {
+            position: absolute;
+            right: 300px; }
+          .form .f-c .c-b .b-table .b-table1 .bt-r span, .form .f-c .c-b .b-table .b-table2 .bt-r span, .form .f-c .c-b .b-table .b-table3 .bt-r span, .form .f-c .c-b .b-table .b-table4 .bt-r span, .form .f-c .c-b .b-table .b-table5 .bt-r span, .form .f-c .c-b .b-table .b-table1 .bt-r .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .bt-r select, .form .f-c .c-b .b-table .b-table2 .bt-r .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .bt-r select, .form .f-c .c-b .b-table .b-table3 .bt-r .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .bt-r select, .form .f-c .c-b .b-table .b-table4 .bt-r .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .bt-r select, .form .f-c .c-b .b-table .b-table5 .bt-r .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .bt-r select {
+            margin-left: 20px;
+            display: block;
+            float: left;
+            height: 26px;
+            line-height: 26px;
+            color: #979191;
+            font-style: italic; }
+          .form .f-c .c-b .b-table .b-table1 .bt-r button, .form .f-c .c-b .b-table .b-table2 .bt-r button, .form .f-c .c-b .b-table .b-table3 .bt-r button, .form .f-c .c-b .b-table .b-table4 .bt-r button, .form .f-c .c-b .b-table .b-table5 .bt-r button {
+            padding: 2px 10px;
+            background-color: #908c8c;
+            margin: 0 10px;
+            color: #fff; }
+        .form .f-c .c-b .b-table .b-table1 .rt-d, .form .f-c .c-b .b-table .b-table2 .rt-d, .form .f-c .c-b .b-table .b-table3 .rt-d, .form .f-c .c-b .b-table .b-table4 .rt-d, .form .f-c .c-b .b-table .b-table5 .rt-d {
+          width: 380px;
+          height: 275px;
+          position: absolute;
+          right: -20px;
+          top: -30px;
+          background-color: #f4f9fd; }
+          .form .f-c .c-b .b-table .b-table1 .rt-d .rd-h, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-h, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-h, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-h, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-h {
+            width: 360px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #4d99f7;
+            padding: 0 10px 20px 10px; }
+          .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d {
+            width: 320px;
+            padding: 0 30px;
+            margin: 5px 0;
+            float: left; }
+            .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d button, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d button, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d button, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d button, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d button {
+              width: 100%;
+              height: 30px;
+              line-height: 30px;
+              background-color: #4d99f7;
+              color: #fff; }
+            .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d span, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d span, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d span, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d span, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d span, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select {
+              width: 55px;
+              height: 30px;
+              line-height: 30px;
+              display: block;
+              float: left; }
+            .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d select {
+              width: 265px; }
+        .form .f-c .c-b .b-table .b-table1 .h, .form .f-c .c-b .b-table .b-table2 .h, .form .f-c .c-b .b-table .b-table3 .h, .form .f-c .c-b .b-table .b-table4 .h, .form .f-c .c-b .b-table .b-table5 .h {
+          height: 180px; }
+          .form .f-c .c-b .b-table .b-table1 .h .txta, .form .f-c .c-b .b-table .b-table2 .h .txta, .form .f-c .c-b .b-table .b-table3 .h .txta, .form .f-c .c-b .b-table .b-table4 .h .txta, .form .f-c .c-b .b-table .b-table5 .h .txta {
+            width: 55%;
+            height: 180px;
+            line-height: 30px;
+            padding: 5px 10px;
+            box-sizing: border-box;
+            float: left;
+            color: #333;
+            resize: none; }
+          .form .f-c .c-b .b-table .b-table1 .h span, .form .f-c .c-b .b-table .b-table2 .h span, .form .f-c .c-b .b-table .b-table3 .h span, .form .f-c .c-b .b-table .b-table4 .h span, .form .f-c .c-b .b-table .b-table5 .h span, .form .f-c .c-b .b-table .b-table1 .h .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table1 .rt-d .rd-d .h select, .form .f-c .c-b .b-table .b-table2 .h .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table2 .rt-d .rd-d .h select, .form .f-c .c-b .b-table .b-table3 .h .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table3 .rt-d .rd-d .h select, .form .f-c .c-b .b-table .b-table4 .h .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table4 .rt-d .rd-d .h select, .form .f-c .c-b .b-table .b-table5 .h .rt-d .rd-d select, .form .f-c .c-b .b-table .b-table5 .rt-d .rd-d .h select {
+            margin-left: 20px;
+            display: block;
+            float: left;
+            height: 180px;
+            line-height: 26px;
+            color: #979191;
+            font-style: italic;
+            width: 35%;
+            text-align: left; }
+        .form .f-c .c-b .b-table .b-table1 .btr-r, .form .f-c .c-b .b-table .b-table2 .btr-r, .form .f-c .c-b .b-table .b-table3 .btr-r, .form .f-c .c-b .b-table .b-table4 .btr-r, .form .f-c .c-b .b-table .b-table5 .btr-r {
+          width: 85%; }
+      .form .f-c .c-b .b-table .b-table2 {
+        display: none; }
+      .form .f-c .c-b .b-table .b-table3 {
+        display: none; }
+      .form .f-c .c-b .b-table .b-table4 {
+        display: none; }
+      .form .f-c .c-b .b-table .b-table5 {
+        display: none; }
+
+/*# sourceMappingURL=/components/assets1/assets1.css.map */

@@ -1,0 +1,85 @@
+.container .content {
+  width: calc(100vw - 250px);
+  height: auto;
+  margin: 10px 10px 50px 10px;
+  min-width: 774px;
+  border: 1px #ccc solid; }
+  .container .content .c-m {
+    width: 97%;
+    margin: 1.5%;
+    border-top: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    float: left; }
+    .container .content .c-m ul {
+      width: 100%;
+      height: 40px;
+      border-right: 1px #ccc solid;
+      border-bottom: 1px #ccc solid; }
+      .container .content .c-m ul li {
+        height: 20px;
+        line-height: 20px;
+        padding: 10px;
+        float: left;
+        /*span:hover{background-color: #ec98fe;}*/ }
+        .container .content .c-m ul li span {
+          display: block;
+          border-radius: 4px;
+          padding: 0 10px;
+          cursor: pointer; }
+      .container .content .c-m ul .b-gray {
+        background-color: #f2f2f2;
+        width: 150px;
+        text-align: center;
+        border-right: 1px solid #ccc; }
+      .container .content .c-m ul .active {
+        background-color: #ec98fe; }
+  .container .content .c-l {
+    float: left;
+    height: 30px;
+    margin: 10px 20px; }
+    .container .content .c-l button {
+      line-height: 30px;
+      height: 30px;
+      padding: 0 10px;
+      background-color: #5e5e66;
+      border: none;
+      color: #fff; }
+  .container .content .c-r {
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 300px;
+    float: right;
+    margin: 10px 20px; }
+    .container .content .c-r .r-l {
+      width: 270px;
+      height: 28px;
+      line-height: 28px;
+      border: none;
+      outline: none;
+      float: left; }
+    .container .content .c-r .r-l:hover {
+      border: none;
+      outline: none; }
+    .container .content .c-r i {
+      color: #000;
+      margin: 8px 0 0 10px; }
+  .container .content .bug-t {
+    margin: 1.5%;
+    width: 96%;
+    float: left;
+    outline: 1px  solid #ccc;
+    padding: 0.5%; }
+
+.container .content .ztree.form-control li{
+  line-height: 14px;
+  list-style: outside none none;
+  margin: 0;
+  outline: 0 none;
+  padding: 0;
+  text-align: left;
+  white-space: nowrap;
+  float: none;
+  height: auto;
+}
+/*# sourceMappingURL=user-input.css.map */

@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>展示页</title>
+    
+
+    <style>html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft Yahei";
+  font-size: calc(10px + 4 * (100vw - 1920px) / 400);
+  background-color: #252736;
+  color: #a0a5cd;
+  letter-spacing: 1px;
+  min-font-size: 10px;
+  min-width: 1900px; }
+
+/*html {
+  overflow-y: scroll;
+}
+
+:root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+:root body {
+  position: absolute;
+}
+
+body {
+  width: 100vw;
+  overflow: hidden;
+}*/
+body {
+  background: url(/static/img/b-b.png) no-repeat center;
+  background-size: 100% 100%; }
+
+ul, li {
+  list-style: none; }
+
+button {
+  outline: none;
+  border: none; }
+
+@font-face {
+  font-family: myFirstFont;
+  src: url("/static/fonts/one.ttf"), url("/static/fonts/TRENDS.woff") format("woff"); }
+@font-face {
+  font-family: myTwoFont;
+  src: url("/static/fonts/gtrg.ttf"), url("/static/fonts/gtrg.woff") format("woff"); }
+@font-face {
+  font-family: myThreeFont;
+  src: url("/static/fonts/ITCAvantGardebyBT-Book.otf"); }
+@font-face {
+  font-family: myFourFont;
+  src: url("/static/fonts/CenturyGothic.ttf"); }
+.chrome {
+  -webkit-transform: scale(0.8);
+  -o-transform: scale(1); }
+
+.red {
+  color: #cd1824 !important; }
+
+.blue {
+  color: #fff001 !important; }
+
+.green {
+  color: #56b701 !important; }
+
+.high {
+  color: #da5e5e; }
+
+.middle {
+  color: #bad61d; }
+
+.low {
+  color: #7e67f3; }
+
+.yh {
+  font-family: myFirstFont;
+  letter-spacing: 1px; }
+
+.el {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+header {
+  width: 100%;
+  height: 68px;
+  position: relative;
+  border-bottom: 1px solid #686c91;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between; }
+  header .logo {
+    width: 200px;
+    height: 67px; }
+    header .logo img {
+      width: 100%;
+      height: 100%; }
+  header .h-l {
+    height: 68px;
+    margin-right: 20px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    display: flex; }
+    header .h-l button {
+      width: 110px;
+      line-height: 28px;
+      height: 28px;
+      margin: 20px 30px;
+      background-color: #313348;
+      cursor: pointer;
+      color: #a0a5cd; }
+    header .h-l .l-i {
+      width: 120px; }
+      header .h-l .l-i .i-t, header .h-l .l-i .i-m {
+        width: 100%;
+        height: 22px;
+        line-height: 22px;
+        font-size: 12px;
+        display: block;
+        color: #575b79; }
+      header .h-l .l-i .i-m {
+        height: 24px;
+        line-height: 24px;
+        font-size: 24px;
+        color: #e5edfb;
+        font-family: myFourFont;
+        display: block; }
+      header .h-l .l-i .i-t-b {
+        line-height: 18px; }
+
+.container {
+  display: flex;
+  flex-wrap: nowrap; }
+  .container .l {
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+    padding-left: 5px;
+    box-sizing: border-box; }
+    .container .l .t-l {
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      display: flex;
+      font-size: 18px;
+      padding-left: 10px;
+      font-weight: bold;
+      font-family: myFirstFont; }
+      .container .l .t-l .l-s {
+        font-size: 28px;
+        margin: 0 10px;
+        /*text-shadow: 0 0 5px #aaa;*/
+        font-family: myThreeFont;
+        letter-spacing: 2px; }
+      .container .l .t-l .l-s1 {
+        font-size: 14px; }
+    .container .l .l-chart {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      overflow: hidden;
+      max-width: 318px; }
+      .container .l .l-chart .lc-l {
+        flex: 5;
+        border-top: 1px solid #3a3c53;
+        border-left: 1px solid #3a3c53;
+        margin-top: 5px;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column; }
+        .container .l .l-chart .lc-l span {
+          display: block;
+          height: 16px;
+          line-height: 16px;
+          margin: 5px 0 0 5px;
+          box-sizing: border-box;
+          transition: width 0.5s;
+          padding: 0 5px;
+          text-align: right;
+          background-color: #494d66;
+          cursor: pointer; }
+        .container .l .l-chart .lc-l span:hover {
+          background-color: #434ea8; }
+      .container .l .l-chart .lc-r {
+        flex: 4;
+        border-top: 1px solid #3a3c53;
+        margin-top: 5px; }
+        .container .l .l-chart .lc-r span {
+          display: block;
+          width: 100%;
+          height: 16px;
+          line-height: 16px;
+          margin: 5px 0 0 5px;
+          box-sizing: border-box;
+          padding: 0 5px;
+          cursor: pointer;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+    .container .l .pie {
+      height: 200px; }
+    .container .l .l-b {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap; }
+      .container .l .l-b .c-t {
+        width: 100%;
+        box-sizing: border-box;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        border-bottom: #3a3c53 1px solid; }
+      .container .l .l-b .t-b {
+        width: 96%;
+        margin: 5px 2% 0 2%;
+        border: 1px solid #3a3c53;
+        height: 70px;
+        border-radius: 2px; }
+        .container .l .l-b .t-b .b-b {
+          width: 98%;
+          height: 60px;
+          margin: 5px 0;
+          border-left: #438328 1px solid;
+          border-right: #6a2829 1px solid;
+          display: flex;
+          flex-wrap: nowrap; }
+          .container .l .l-b .t-b .b-b .tb-l {
+            height: 60px;
+            flex: 2;
+            padding-left: 5px;
+            box-sizing: border-box; }
+            .container .l .l-b .t-b .b-b .tb-l .b-s {
+              color: #357fbc;
+              height: 14px;
+              line-height: 14px;
+              width: 100%;
+              box-sizing: border-box;
+              font-weight: bold; }
+            .container .l .l-b .t-b .b-b .tb-l .b-d {
+              width: 100%;
+              height: 32px;
+              display: flex;
+              flex-wrap: nowrap; }
+              .container .l .l-b .t-b .b-b .tb-l .b-d .d-l {
+                flex: 1; }
+                .container .l .l-b .t-b .b-b .tb-l .b-d .d-l .l-s1 {
+                  width: 100%;
+                  float: left;
+                  color: #6d6f7c;
+                  height: 32px;
+                  line-height: 16px; }
+                .container .l .l-b .t-b .b-b .tb-l .b-d .d-l .l-s2 {
+                  width: 40px;
+                  height: 22px;
+                  line-height: 22px;
+                  text-align: center;
+                  background-color: #47485a;
+                  display: block;
+                  margin: 5px;
+                  font-size: 16px;
+                  color: #fe3d3e;
+                  font-weight: bold; }
+            .container .l .l-b .t-b .b-b .tb-l .b-s1 {
+              width: 100%;
+              height: 14px;
+              line-height: 14px;
+              text-shadow: #a2cbf9 0 0 3px;
+              box-sizing: border-box; }
+              .container .l .l-b .t-b .b-b .tb-l .b-s1 .b-s2 {
+                color: #d2393b;
+                margin: 0 5px;
+                text-shadow: none; }
+          .container .l .l-b .t-b .b-b .tb-r {
+            flex: 3;
+            background-color: #303241;
+            opacity: 0.4;
+            border-left: 1px solid #6a2829;
+            height: 60px;
+            color: #FF44CC;
+            box-sizing: border-box;
+            padding: 0 2px;
+            line-height: 15px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical; }
+  .container .r {
+    display: flex;
+    flex: 5;
+    flex-direction: row;
+    margin-left: 10px;
+    flex-wrap: wrap; }
+    .container .r .rt-t {
+      width: 100%;
+      height: 690px;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row; }
+      .container .r .rt-t .rt-l {
+        flex: 9;
+        position: relative; }
+        .container .r .rt-t .rt-l .rt-h {
+          width: 100%;
+          height: 60px;
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: row;
+          font-family: myFirstFont; }
+          .container .r .rt-t .rt-l .rt-h .c-d {
+            flex: 1;
+            height: 60px;
+            font-size: 14px;
+            padding: 5px 0;
+            box-sizing: border-box;
+            text-align: center; }
+            .container .r .rt-t .rt-l .rt-h .c-d .d-s, .container .r .rt-t .rt-l .rt-h .c-d .d-s1 {
+              height: 25px;
+              line-height: 25px;
+              width: 100%;
+              display: block; }
+            .container .r .rt-t .rt-l .rt-h .c-d .d-s1 {
+              color: #a48e16; }
+        .container .r .rt-t .rt-l .rt-b {
+          height: 630px;
+          border: 3px solid transparent;
+          width: 100%;
+          box-sizing: border-box;
+          border-image: url(/static/img/border.png) 3 3 round; }
+        .container .r .rt-t .rt-l .info-h {
+          width: 100%;
+          height: 330px;
+          position: absolute;
+          top: 330px; }
+          .container .r .rt-t .rt-l .info-h .info {
+            width: 230px;
+            height: 330px;
+            border: transparent solid 1px;
+            box-sizing: border-box;
+            margin-right: 50px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-image: url(/static/img/border1.png) 1 1 round;
+            float: right;
+            position: relative; }
+            .container .r .rt-t .rt-l .info-h .info .time {
+              width: 24px;
+              height: 24px;
+              text-align: center;
+              line-height: 24px;
+              position: absolute;
+              right: 10px;
+              top: 5px; }
+            .container .r .rt-t .rt-l .info-h .info .spinner {
+              font-size: 20px;
+              width: 1.2em;
+              height: 1.2em;
+              border-radius: 50%;
+              position: absolute;
+              right: 10px;
+              top: 5px;
+              box-shadow: inset 0 0 0 0.1em rgba(58, 168, 237, 0.2); }
+            .container .r .rt-t .rt-l .info-h .info .spinner i {
+              position: absolute;
+              clip: rect(0, 1.2em, 1.2em, 0.6em);
+              width: 1.2em;
+              height: 1.2em;
+              animation: spinner-circle-clipper 1s ease-in-out infinite; }
+@keyframes spinner-circle-clipper {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(180deg); } }
+            .container .r .rt-t .rt-l .info-h .info .spinner i:after {
+              position: absolute;
+              clip: rect(0, 1.2em, 1.2em, 0.6em);
+              width: 1.2em;
+              height: 1.2em;
+              content: '';
+              animation: spinner-circle 1s ease-in-out infinite;
+              border-radius: 50%;
+              box-shadow: inset 0 0 0 .1em #B9C3E9; }
+@keyframes spinner-circle {
+  0% {
+    transform: rotate(-180deg); }
+  100% {
+    transform: rotate(180deg); } }
+            .container .r .rt-t .rt-l .info-h .info .info-s1 {
+              width: 100%;
+              color: #fff;
+              text-shadow: 0 0 5px red;
+              display: block;
+              text-align: center;
+              font-size: 16px;
+              margin-top: 30px; }
+            .container .r .rt-t .rt-l .info-h .info .info-s2 {
+              width: 100%;
+              color: #c3c4f7;
+              display: block;
+              text-align: center;
+              height: 30px;
+              line-height: 30px; }
+            .container .r .rt-t .rt-l .info-h .info .line {
+              width: 100%;
+              height: 3px;
+              background-color: #3f4152; }
+            .container .r .rt-t .rt-l .info-h .info ul {
+              width: 100%;
+              height: 240px;
+              padding: 0; }
+              .container .r .rt-t .rt-l .info-h .info ul span {
+                -webkit-transform: scale(0.8);
+                -webkit-transform-origin: 0 50%;
+                -o-transform: scale(1);
+                -moz-transform: scale(1); }
+              .container .r .rt-t .rt-l .info-h .info ul li {
+                float: left;
+                width: 100%;
+                margin-top: 4px;
+                padding: 0 5px;
+                box-sizing: border-box; }
+                .container .r .rt-t .rt-l .info-h .info ul li .ul-l, .container .r .rt-t .rt-l .info-h .info ul li .ul-r {
+                  width: 52px;
+                  height: 20px;
+                  line-height: 20px;
+                  display: block;
+                  float: left;
+                  color: #747683; }
+                .container .r .rt-t .rt-l .info-h .info ul li .ul-r {
+                  width: 166px; }
+                .container .r .rt-t .rt-l .info-h .info ul li .url {
+                  white-space: normal;
+                  width: 166px;
+                  float: left;
+                  word-break: break-all;
+                  line-height: 20px;
+                  color: #c2aaf9;
+                  margin-top: -4px; }
+                .container .r .rt-t .rt-l .info-h .info ul li .big {
+                  font-size: 14px;
+                  color: #beb1db;
+                  font-weight: bold; }
+                .container .r .rt-t .rt-l .info-h .info ul li .mid {
+                  font-size: 12px;
+                  color: #a2c4fb; }
+                .container .r .rt-t .rt-l .info-h .info ul li .ul-bl, .container .r .rt-t .rt-l .info-h .info ul li .ul-br {
+                  display: block;
+                  float: left;
+                  color: #747683;
+                  margin-top: 10px;
+                  -webkit-transform: scale(1);
+                  -webkit-transform-origin: 0 0; }
+                .container .r .rt-t .rt-l .info-h .info ul li .ul-br {
+                  float: right;
+                  margin-top: 10px; }
+              .container .r .rt-t .rt-l .info-h .info ul .ul-li {
+                background-color: rgba(221, 39, 45, 0.6); }
+                .container .r .rt-t .rt-l .info-h .info ul .ul-li span, .container .r .rt-t .rt-l .info-h .info ul .ul-li div {
+                  color: #fff; }
+      .container .r .rt-t .rt-r {
+        flex: 5;
+        height: 690px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; }
+        .container .r .rt-t .rt-r .rtt-t {
+          width: 50%; }
+          .container .r .rt-t .rt-r .rtt-t .r-b {
+            width: 100%;
+            height: 40px;
+            margin: 10px 0;
+            color: #b4e7f8;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            font-family: myTwoFont;
+            letter-spacing: 0;
+            box-sizing: border-box;
+            padding-left: 5px; }
+            .container .r .rt-t .rt-r .rtt-t .r-b span {
+              -webkit-transform: scale(0.8);
+              -webkit-transform-origin: 0 50%;
+              -o-transform: scale(1);
+              -moz-transform: scale(1); }
+            .container .r .rt-t .rt-r .rtt-t .r-b .b-l {
+              background: url("/static/img/letter.png") no-repeat center;
+              height: 40px;
+              line-height: 40px;
+              font-size: 13px;
+              text-align: center;
+              width: 13%;
+              overflow: hidden; }
+            .container .r .rt-t .rt-r .rtt-t .r-b .b-c {
+              width: 35%;
+              height: 40px;
+              overflow: hidden;
+              padding-left: 5px; }
+              .container .r .rt-t .rt-r .rtt-t .r-b .b-c span {
+                height: 20px;
+                width: 100%;
+                line-height: 20px;
+                display: block; }
+            .container .r .rt-t .rt-r .rtt-t .r-b .b-r {
+              width: 17%;
+              box-sizing: border-box;
+              background-color: #303344;
+              height: 40px;
+              overflow: hidden;
+              margin-right: 1%; }
+              .container .r .rt-t .rt-r .rtt-t .r-b .b-r .r-s, .container .r .rt-t .rt-r .rtt-t .r-b .b-r .r-s1 {
+                height: 20px;
+                line-height: 20px;
+                width: 100%;
+                text-align: center;
+                float: left; }
+              .container .r .rt-t .rt-r .rtt-t .r-b .b-r .r-s1 {
+                color: #9c6b26; }
+          .container .r .rt-t .rt-r .rtt-t .rt-chart {
+            width: 100%;
+            height: 80px;
+            padding-top: 5px;
+            box-sizing: border-box;
+            padding-left: 2px; }
+            .container .r .rt-t .rt-r .rtt-t .rt-chart .chart-h1 {
+              width: 100%;
+              height: 16px;
+              line-height: 14px;
+              display: flex;
+              justify-content: space-between;
+              color: #bbd1fa;
+              padding: 0 5px;
+              box-sizing: border-box; }
+              .container .r .rt-t .rt-r .rtt-t .rt-chart .chart-h1 .h1-l {
+                color: #b4e7f8; }
+              .container .r .rt-t .rt-r .rtt-t .rt-chart .chart-h1 .h1-r {
+                font-size: 16px; }
+            .container .r .rt-t .rt-r .rtt-t .rt-chart .chart-c1 {
+              width: 100%;
+              height: 64px; }
+        .container .r .rt-t .rt-r .rt-table {
+          width: 100%;
+          height: 250px;
+          padding: 0 5px 0 10px;
+          box-sizing: border-box; }
+          .container .r .rt-t .rt-r .rt-table .title {
+            width: 100%;
+            height: 34px;
+            line-height: 34px;
+            color: #afb1c0;
+            border-bottom: 1px solid #3a3c53;
+            display: block;
+            box-sizing: border-box;
+            font-size: 12px; }
+          .container .r .rt-t .rt-r .rt-table .tt-body {
+            height: 200px; }
+            .container .r .rt-t .rt-r .rt-table .tt-body .t-body {
+              width: 100%;
+              margin-top: 10px;
+              table-layout: fixed; }
+              .container .r .rt-t .rt-r .rt-table .tt-body .t-body tr {
+                width: 100%;
+                height: 20px;
+                cursor: pointer; }
+                .container .r .rt-t .rt-r .rt-table .tt-body .t-body tr th {
+                  height: 20px;
+                  line-height: 20px;
+                  background: rgba(187, 187, 187, 0.2);
+                  color: #a2a4b5;
+                  text-align: left;
+                  padding-left: 5px;
+                  box-sizing: border-box; }
+                .container .r .rt-t .rt-r .rt-table .tt-body .t-body tr td {
+                  height: 30px;
+                  line-height: 8px;
+                  color: #67697d;
+                  background-color: transparent;
+                  padding: 0 0 0 5px;
+                  box-sizing: border-box;
+                  border-bottom: 1px solid #3a3c53;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis; }
+                  .container .r .rt-t .rt-r .rt-table .tt-body .t-body tr td img {
+                    width: 30px;
+                    height: 30px; }
+                .container .r .rt-t .rt-r .rt-table .tt-body .t-body tr .mw1 {
+                  max-width: 55px; }
+                .container .r .rt-t .rt-r .rt-table .tt-body .t-body tr .mw2 {
+                  max-width: 110px; }
+                .container .r .rt-t .rt-r .rt-table .tt-body .t-body tr .mw3 {
+                  max-width: 160px; }
+              .container .r .rt-t .rt-r .rt-table .tt-body .t-body .tr-s {
+                height: 30px; }
+              .container .r .rt-t .rt-r .rt-table .tt-body .t-body .tr-s:hover td {
+                color: #afb1c0;
+                text-shadow: 0 0 5px #bbd1fa; }
+    .container .r .rt-b {
+      width: 100%;
+      height: 320px;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row; }
+      .container .r .rt-b .bt-b {
+        flex: 1;
+        margin-left: 5px;
+        margin-top: 4px;
+        letter-spacing: 0;
+        max-width: 192px; }
+        .container .r .rt-b .bt-b .bt-h {
+          width: 100%;
+          height: 40px;
+          font-size: 14px;
+          line-height: 40px;
+          color: #7690b8;
+          font-weight: bold;
+          display: block;
+          padding: 0 5px;
+          box-sizing: border-box; }
+        .container .r .rt-b .bt-b .bt-c {
+          width: 100%;
+          height: 276px;
+          border-left: 1px solid #3a3c53;
+          color: #67697d;
+          padding-left: 5px;
+          box-sizing: border-box; }
+          .container .r .rt-b .bt-b .bt-c .c-s {
+            width: 100%;
+            height: 16px;
+            line-height: 16px;
+            display: block; }
+            .container .r .rt-b .bt-b .bt-c .c-s .s-l {
+              font-size: 12px;
+              text-shadow: 0 0 4px #67697d;
+              color: #bbd1fa; }
+          .container .r .rt-b .bt-b .bt-c .c-chart {
+            width: 100%;
+            height: 110px;
+            box-sizing: border-box;
+            margin-top: 4px; }
+            .container .r .rt-b .bt-b .bt-c .c-chart .chart-t {
+              width: 100%;
+              height: 40px;
+              line-height: 40px; }
+            .container .r .rt-b .bt-b .bt-c .c-chart .chart-c {
+              width: 100%;
+              height: 64px;
+              display: flex; }
+              .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block {
+                flex: 1;
+                height: 64px;
+                display: flex;
+                margin: 0 3px; }
+                .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .c-left {
+                  flex: 3;
+                  height: 64px; }
+                  .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .c-left .cl-s1, .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .c-left .cl-s2, .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .c-left .cl-s3 {
+                    width: 100%;
+                    display: block;
+                    color: #67697d;
+                    text-align: center;
+                    height: 20px;
+                    line-height: 20px; }
+                  .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .c-left .cl-s2 {
+                    font-size: 12px;
+                    color: #b4b6c3;
+                    font-weight: bold;
+                    font-family: myFourFont; }
+                  .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .c-left .cl-s3 {
+                    border: 1px solid #67697d;
+                    box-sizing: border-box;
+                    margin-top: 6px;
+                    height: 18px;
+                    line-height: 16px; }
+                .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .c-right {
+                  flex: 2;
+                  height: 64px;
+                  border: 1px solid #3f425c;
+                  margin-left: 5px;
+                  box-sizing: border-box;
+                  display: flex;
+                  flex-direction: column-reverse; }
+                  .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .c-right .fill {
+                    width: 100%;
+                    height: 0;
+                    transition: height 0.5s; }
+                .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .n {
+                  background-color: #3f425c; }
+                .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .yes {
+                  background-color: #fff001;
+                  border: none;
+                  color: #fff !important; }
+                .container .r .rt-b .bt-b .bt-c .c-chart .chart-c .c-block .no {
+                  background-color: #cd0d08;
+                  border: none;
+                  color: #fff !important; }
+          .container .r .rt-b .bt-b .bt-c .c-chart1 {
+            width: 100%;
+            height: 95px;
+            box-sizing: border-box; }
+            .container .r .rt-b .bt-b .bt-c .c-chart1 .chart-h {
+              height: 16px;
+              line-height: 16px;
+              width: 100%;
+              padding-right: 5px;
+              box-sizing: border-box; }
+              .container .r .rt-b .bt-b .bt-c .c-chart1 .chart-h .ch-l {
+                float: left; }
+              .container .r .rt-b .bt-b .bt-c .c-chart1 .chart-h .ch-r {
+                float: right; }
+            .container .r .rt-b .bt-b .bt-c .c-chart1 .chart-c {
+              width: 100%;
+              height: 75px; }
+
+.bgb {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: none;
+  top: 0;
+  z-index: 119;
+  left: 0;
+  min-width: 100vw;
+  background-color: rgba(0, 0, 0, 0.78); }
+  .bgb .time {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    position: absolute;
+    right: 10px;
+    top: 5px; }
+  .bgb .spinner {
+    font-size: 20px;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    box-shadow: inset 0 0 0 0.1em rgba(58, 168, 237, 0.2); }
+  .bgb .spinner i {
+    position: absolute;
+    clip: rect(0, 1.2em, 1.2em, 0.6em);
+    width: 1.2em;
+    height: 1.2em;
+    animation: spinner-circle-clipper 10s ease-in-out infinite; }
+@keyframes spinner-circle-clipper {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(180deg); } }
+  .bgb .spinner i:after {
+    position: absolute;
+    clip: rect(0, 1.2em, 1.2em, 0.6em);
+    width: 1.2em;
+    height: 1.2em;
+    content: '';
+    animation: spinner-circle 10s ease-in-out infinite;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 .1em #B9C3E9; }
+@keyframes spinner-circle {
+  0% {
+    transform: rotate(-180deg); }
+  100% {
+    transform: rotate(180deg); } }
+  .bgb .emergency, .bgb .warning {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    margin: 175px 0 0 0;
+    color: #fff;
+    padding: 0 5px;
+    box-sizing: border-box;
+    background-color: rgba(60, 15, 15, 0.6);
+    border: transparent solid 1px;
+    overflow: hidden;
+    border-image: url(/static/img/border2.png) 1 1 round;
+    visibility: hidden;
+    top: 35%;
+    transition: width 1s,height 1s,visibility 1s,margin 1s; }
+    .bgb .emergency .w-t, .bgb .warning .w-t, .bgb .emergency .w-m, .bgb .warning .w-m, .bgb .emergency .wb-l .w-b, .bgb .warning .wb-l .w-b, .bgb .emergency .wb-l .w-b .w-bt, .bgb .warning .wb-l .w-b .w-bt {
+      height: 40px;
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      margin-top: 10px; }
+      .bgb .emergency .w-t .wt-l, .bgb .warning .w-t .wt-l, .bgb .emergency .w-m .wt-l, .bgb .warning .w-m .wt-l, .bgb .emergency .wb-l .w-b .wt-l, .bgb .warning .wb-l .w-b .wt-l, .bgb .emergency .w-t .wt-r, .bgb .warning .w-t .wt-r, .bgb .emergency .w-m .wt-r, .bgb .warning .w-m .wt-r, .bgb .emergency .wb-l .w-b .wt-r, .bgb .warning .wb-l .w-b .wt-r {
+        height: 30px;
+        line-height: 30px;
+        font-size: 20px;
+        text-align: center;
+        float: left;
+        display: block;
+        color: #ff8187;
+        letter-spacing: 10px;
+        padding-left: 6px; }
+      .bgb .emergency .w-t .wt-r, .bgb .warning .w-t .wt-r, .bgb .emergency .w-m .wt-r, .bgb .warning .w-m .wt-r, .bgb .emergency .wb-l .w-b .wt-r, .bgb .warning .wb-l .w-b .wt-r {
+        float: right;
+        font-size: 14px;
+        border-radius: 50%;
+        border: 2px solid rgba(245, 145, 145, 0.6);
+        width: 30px; }
+    .bgb .emergency .w-m, .bgb .warning .w-m {
+      background-color: #98070a;
+      padding: 5px 20px;
+      display: block;
+      text-align: center;
+      line-height: 30px;
+      font-size: 24px; }
+    .bgb .emergency .wb-l, .bgb .warning .wb-l {
+      width: 50%;
+      height: 40px;
+      float: left;
+      margin-top: 5px; }
+      .bgb .emergency .wb-l .w-b, .bgb .warning .wb-l .w-b {
+        line-height: 20px;
+        height: 20px;
+        padding: 0;
+        display: block;
+        font-size: 12px;
+        color: #b74d4f;
+        margin-top: 0; }
+        .bgb .emergency .wb-l .w-b .w-bt, .bgb .warning .wb-l .w-b .w-bt {
+          width: 50%;
+          margin-top: 0;
+          line-height: 20px;
+          height: 20px;
+          padding: 0;
+          float: left; }
+    .bgb .emergency .line, .bgb .warning .line {
+      background: linear-gradient(to right, #723703, #fdfc00, #723703);
+      width: 100%;
+      height: 1px;
+      margin: 5px 0;
+      float: left; }
+    .bgb .emergency .w-title, .bgb .warning .w-title {
+      width: 100%;
+      margin: 10px 0;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+      color: #b7fb57;
+      font-size: 14px;
+      padding-left: 10px; }
+      .bgb .emergency .w-title i, .bgb .warning .w-title i {
+        margin-right: 5px;
+        font-size: 18px;
+        line-height: 30px; }
+    .bgb .emergency .w-btm, .bgb .warning .w-btm {
+      width: 100%;
+      height: 140px;
+      float: left; }
+      .bgb .emergency .w-btm .bt-red, .bgb .warning .w-btm .bt-red {
+        color: #db4444; }
+      .bgb .emergency .w-btm .bt-gray, .bgb .warning .w-btm .bt-gray {
+        color: #9f9fa0; }
+      .bgb .emergency .w-btm .btm-l, .bgb .warning .w-btm .btm-l {
+        width: 150px;
+        float: left;
+        padding-left: 10px;
+        position: relative;
+        height: 135px; }
+        .bgb .emergency .w-btm .btm-l .l-info, .bgb .warning .w-btm .btm-l .l-info {
+          width: 140px;
+          font-size: 12px;
+          float: left;
+          height: 20px; }
+          .bgb .emergency .w-btm .btm-l .l-info span, .bgb .warning .w-btm .btm-l .l-info span {
+            height: 20px;
+            line-height: 20px;
+            display: inline-block;
+            float: left; }
+          .bgb .emergency .w-btm .btm-l .l-info .left, .bgb .warning .w-btm .btm-l .l-info .left {
+            margin-left: 10px; }
+        .bgb .emergency .w-btm .btm-l .l-btm, .bgb .warning .w-btm .btm-l .l-btm {
+          margin-bottom: 0;
+          height: 20px;
+          line-height: 20px;
+          width: 100%;
+          position: absolute;
+          bottom: 10px;
+          left: 10px; }
+          .bgb .emergency .w-btm .btm-l .l-btm div, .bgb .warning .w-btm .btm-l .l-btm div {
+            float: left;
+            margin-right: 5px; }
+      .bgb .emergency .w-btm .btm-m, .bgb .warning .w-btm .btm-m {
+        width: 220px;
+        float: left;
+        height: 135px;
+        border-left: 1px solid #4e232a; }
+        .bgb .emergency .w-btm .btm-m .mt-l, .bgb .warning .w-btm .btm-m .mt-l {
+          width: 45px;
+          float: left;
+          text-align: right;
+          height: 20px;
+          line-height: 20px; }
+        .bgb .emergency .w-btm .btm-m .mt-r, .bgb .warning .w-btm .btm-m .mt-r {
+          width: 170px;
+          float: left;
+          height: 20px;
+          line-height: 20px; }
+          .bgb .emergency .w-btm .btm-m .mt-r .mt-bar, .bgb .warning .w-btm .btm-m .mt-r .mt-bar {
+            height: 10px;
+            border: 1px solid #9f9fa0;
+            width: 130px;
+            float: left;
+            margin: 4px 1px; }
+            .bgb .emergency .w-btm .btm-m .mt-r .mt-bar .bar-i, .bgb .warning .w-btm .btm-m .mt-r .mt-bar .bar-i {
+              background-color: #9f9fa0;
+              width: calc(96% - 2px);
+              height: 8px;
+              margin: 1px; }
+          .bgb .emergency .w-btm .btm-m .mt-r .bar-red, .bgb .warning .w-btm .btm-m .mt-r .bar-red {
+            border: 1px solid #db4444; }
+            .bgb .emergency .w-btm .btm-m .mt-r .bar-red .bar-i, .bgb .warning .w-btm .btm-m .mt-r .bar-red .bar-i {
+              background-color: #b52626; }
+          .bgb .emergency .w-btm .btm-m .mt-r span, .bgb .warning .w-btm .btm-m .mt-r span {
+            height: 20px;
+            line-height: 20px;
+            float: left;
+            display: inline-block;
+            width: 25px;
+            margin-left: 3px; }
+        .bgb .emergency .w-btm .btm-m .btm-c, .bgb .warning .w-btm .btm-m .btm-c {
+          width: 100%;
+          height: 80px;
+          float: left; }
+      .bgb .emergency .w-btm .btm-r, .bgb .warning .w-btm .btm-r {
+        width: 297px;
+        float: left;
+        height: 135px;
+        border-left: 1px solid #4e232a;
+        padding-left: 8px; }
+        .bgb .emergency .w-btm .btm-r span, .bgb .warning .w-btm .btm-r span {
+          height: 16px;
+          line-height: 16px;
+          font-size: 12px;
+          width: 300px;
+          float: left;
+          display: inline-block;
+          color: #9f9fa0; }
+  .bgb .warning {
+    background-color: rgba(47, 78, 186, 0.4);
+    height: 0;
+    top: 40%;
+    overflow: hidden; }
+    .bgb .warning .w-t .wt-l, .bgb .warning .w-m .wt-l, .bgb .emergency .wb-l .warning .w-b .wt-l, .bgb .warning .wb-l .w-b .wt-l, .bgb .emergency .wb-l .w-b .warning .w-bt .wt-l, .bgb .warning .w-t .wt-r, .bgb .warning .w-m .wt-r, .bgb .emergency .wb-l .warning .w-b .wt-r, .bgb .emergency .wb-l .w-b .warning .w-bt .wt-r, .bgb .warning .wb-l .w-b .wt-r {
+      color: #d8dd2b; }
+    .bgb .warning .w-t .wt-r, .bgb .warning .w-m .wt-r, .bgb .emergency .wb-l .warning .w-b .wt-r, .bgb .warning .wb-l .w-b .wt-r, .bgb .emergency .wb-l .w-b .warning .w-bt .wt-r {
+      border: 2px solid rgba(219, 238, 110, 0.6); }
+    .bgb .warning .w-m {
+      background-color: rgba(48, 76, 183, 0.8);
+      color: #00fffe; }
+    .bgb .warning .w-c {
+      color: #8987db;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      display: block; }
+  .bgb .s-i {
+    animation: div-s 0.3s ease-in;
+    animation-fill-mode: forwards; }
+  .bgb .s-o {
+    animation: div-h 0.3s ease-in;
+    animation-fill-mode: forwards; }
+@keyframes div-s {
+  0% {
+    width: 0;
+    height: 0;
+    margin: 175px 0 0 0;
+    visibility: hidden; }
+  100% {
+    width: 700px;
+    height: 350px;
+    margin: 0 0 0 -350px;
+    visibility: visible; } }
+@keyframes div-h {
+  0% {
+    width: 700px;
+    height: 350px;
+    margin: 0 0 0 -350px;
+    visibility: visible; }
+  100% {
+    width: 0;
+    height: 0;
+    margin: 175px 0 0 0;
+    visibility: hidden; } }
+  .bgb .s-i1 {
+    animation: div-s1 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease; }
+  .bgb .s-o1 {
+    animation: div-h1 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease; }
+@keyframes div-s1 {
+  0% {
+    width: 0;
+    height: 0;
+    margin: 75px 0 0 0;
+    visibility: hidden; }
+  100% {
+    width: 700px;
+    height: 150px;
+    margin: 0 0 0 -350px;
+    visibility: visible; } }
+@keyframes div-h1 {
+  0% {
+    width: 700px;
+    height: 150px;
+    margin: 0 0 0 -350px;
+    visibility: visible; }
+  100% {
+    width: 0;
+    height: 0;
+    margin: 75px 0 0 0;
+    visibility: hidden; } }
+.bgb-show {
+  display: block; }
+
+.win {
+  visibility: hidden;
+  transition: opacity 0.3s,visibility 0.5s;
+  opacity: 0;
+  color: #000000; }
+  .win .form-b {
+    background-color: #000;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: inline-block;
+    position: absolute;
+    z-index: 119;
+    top: 0;
+    left: 0; }
+  .win .form {
+    width: 1300px;
+    height: auto;
+    position: fixed;
+    left: 50%;
+    margin-bottom: 20px;
+    margin-left: -650px;
+    display: flex;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+    background-color: #fff;
+    font-size: 12px;
+    z-index: 120;
+    top: -150%;
+    transition: top 0.5s;
+    overflow: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    max-height: 650px; }
+  .win .form-info {
+    width: 300px;
+    height: 160px;
+    border-radius: 6px;
+    position: fixed;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -100px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    top: -150%;
+    transition: top 0.5s;
+    z-index: 120; }
+    .win .form-info .title {
+      width: 100%;
+      height: 40px;
+      float: left;
+      background-color: #ccc; }
+      .win .form-info .title .t-l {
+        height: 30px;
+        padding: 5px 20px;
+        line-height: 30px;
+        display: block;
+        float: left;
+        width: auto; }
+      .win .form-info .title button {
+        background-color: transparent;
+        float: right;
+        height: 30px;
+        line-height: 28px;
+        color: #000;
+        margin: 5px 15px; }
+    .win .form-info span {
+      width: 280px;
+      height: 60px;
+      padding: 10px;
+      line-height: 20px;
+      display: block;
+      float: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .win .form-info .btn-one, .win .form-info .btn-two {
+      width: 90px;
+      height: 30px;
+      margin: 5px 105px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      line-height: 30px;
+      text-align: center;
+      float: left; }
+    .win .form-info .btn-two {
+      margin: 5px 28px; }
+    .win .form-info button:hover {
+      background-color: #5e5e66;
+      color: #fff; }
+
+.show {
+  visibility: visible;
+  opacity: 1; }
+  .show .form {
+    top: 12%; }
+  .show .form-info {
+    top: 45%; }
+
+/*# sourceMappingURL=/show.css.map */
+</style>
+    <link rel="stylesheet" href="/static/libs/awesome/css/font-awesome.min.css" />
+</head>
+<body id="bd"  style="visibility: hidden;">
+    <header>
+        <div class="logo" style="width: auto;">
+            <img src="/static/img/logo.png">
+        </div>
+        <div class="h-l">
+            <button onclick="window.location.href='/#!/'">管理控制中心</button>
+            <div class="l-i">
+                <span class="i-t">LOCAL TIME</span>
+                <span class="i-m">{{dateTime.hour}}:{{dateTime.min}}:{{dateTime.sec}}</span>
+                <span class="i-t i-t-b">{{dateTime.year}}年{{dateTime.mon}}月{{dateTime.date}}日</span>
+            </div>
+        </div>
+    </header>
+    <div class="container" id="app">
+        <section class="l">
+            <span class="t-l">攻击次数统计<span v-if="int==1" class="l-s">{{head}}万</span><span v-else class="l-s">{{head}}</span><span class="l-s1">(次)</span></span>
+            <div id="chart1" class="l-chart"></div>
+            <div class="l-b">
+                <div class="c-t">受攻击网站排行</div>
+                <div class="l-chart">
+                    <div class="lc-l">
+                        <span v-for="(l,item) in ltop" v-bind:style="{width:(item.value/max)*100+ '%'}">{{item.value}}</span>
+                    </div>
+                    <div class="lc-r">
+                        <span v-for="(l,item) in ltop">{{item.name}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="l-b">
+                <div class="c-t">攻击类型统计</div>
+                <div id="chart3" class="l-chart pie"></div>
+            </div>
+            <div class="l-b">
+                <div class="c-t">攻击来源统计</div>
+                <div class="t-b"  v-for="(i,item1) in lmBody">
+                    <div class="b-b">
+                        <div class="tb-l">
+                            <span class="b-s">{{item1.ip}}</span>
+                            <div class="b-d">
+                                <div class="d-l">
+                                    <span class="l-s1">{{item1.addr}}</span>
+                                </div>
+                                <div class="d-l">
+                                    <span class="l-s2 red">{{i+1}}</span>
+                                </div>
+                            </div>
+                            <span class="b-s1">{{item1.count}}<span class="b-s2 el">{{item1.type}}</span></span>
+                        </div>
+                        <div class="tb-r">{{item1.desc}}</div>
+                    </div>
+                </div>
+                <div id="chart4" class="l-chart">
+                </div>
+            </div>
+        </section>
+        <section class="r">
+            <div class="rt-t">
+                <div class="rt-l">
+                    <div class="rt-h">
+                        <div class="c-d">
+                            <span class="d-s">应用系统</span>
+                            <span class="d-s1">{{top.yyxtCount}}</span>
+                        </div>
+                        <div class="c-d">
+                            <span class="d-s">网络设备</span>
+                            <span class="d-s1">{{top.wlsbCount}}</span>
+                        </div>
+                        <div class="c-d">
+                            <span class="d-s">安全设备</span>
+                            <span class="d-s1">{{top.aqsbCount}}</span>
+                        </div>
+                        <div class="c-d">
+                            <span class="d-s">服务器数</span>
+                            <span class="d-s1">{{top.fwqCount}}</span>
+                        </div>
+                        <div class="c-d">
+                            <span class="d-s">SYSLOG</span>
+                            <span class="d-s1">{{top.syslogCount}}</span>
+                        </div>
+                    </div>
+                    <div class="rt-b" id="chart21"></div>
+                    <div class="info-h">
+                        <div class="info"  v-for="(l,item) in mid">
+                            <span class="time">{{timed}}</span>
+                            <div class="spinner"><i></i></div>
+                            <span class="info-s1 el">{{item.name}}</span>
+                            <span class="info-s2">{{item.srcIp}} {{item.taraddr}}</span>
+                            <div class="line"></div>
+                            <ul>
+                                <li>
+                                    <span class="ul-l">目标</span>
+                                    <span class="ul-r big">{{item.site}}</span>
+                                </li>
+                                <li>
+                                    <span class="ul-l">攻击次数</span>
+                                    <span class="ul-r mid">{{item.count}}</span>
+                                </li>
+                                <li>
+                                    <span class="ul-l">影响URL</span>
+                                    <span class="url">{{item.url}}</span>
+                                </li>
+                                <li>
+                                    <span class="ul-bl">最近安全检测</span>
+                                <span class="ul-br">
+                                    <span class="red">高</span>{{item.hlevelc}}
+                                    <span class="blue">中</span>{{item.mlevelc}}
+                                    <span class="green">低</span>{{item.llevelc}}
+                                </span>
+                                </li>
+                                <li class="" v-for="item1 in item.history">
+                                    <span class="ul-l">{{item1.level}}</span>
+                                    <span class="ul-r">{{item1.name}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="rt-r">
+                    <div class="rtt-t" v-for="(l,item) in rt">
+                        <div class="r-b">
+                            <div class="b-l">T</div>
+                            <div class="b-c">
+                                <span class="yh el">{{item.name}}</span>
+                                <span class="">{{item.ip}}</span>
+                            </div>
+                            <div class="b-r">
+                                <span class="r-s ">{{item.uptime}}<span class="yh">天</span></span>
+                                <span class="r-s1 ">UPTIME</span>
+                            </div>
+                            <div class="b-r">
+                                <span class="r-s ">{{item.cpu}}%</span>
+                                <span class="r-s1 ">CPU</span>
+                            </div>
+                            <div class="b-r">
+                                <span class="r-s ">{{item.mem}}%</span>
+                                <span class="r-s1 ">MEM</span>
+                            </div>
+                        </div>
+                        <div class="rt-chart">
+                            <div class="chart-h1">
+                                <span class="h1-l ">{{item.etheren1tName}}</span>
+                                <span class="h1-r">{{item.etherent1}} Mbit/s</span>
+                            </div>
+                            <div class="chart-c1" :id="'tur'+l"></div>
+                        </div>
+                        <div class="rt-chart">
+                            <div class="chart-h1">
+                                <span class="h1-l ">{{item.etherent2Name}}</span>
+                                <span class="h1-r">{{item.etherent2}} Mbit/s</span>
+                            </div>
+                            <div class="chart-c1" :id="'tur1'+l"></div>
+                        </div>
+                    </div>
+                    <div class="rt-table">
+                        <span class="title">最新事件统计</span>
+                        <div class="tt-body">
+                            <table class="t-body" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <th width="10%">级别</th>
+                                    <th width="10%">事件</th>
+                                    <th width="20%">事件源</th>
+                                    <th width="30%">描述</th>
+                                    <th width="30%">时间</th>
+                                </tr>
+                                <tr class="tr-s" v-for="item in rtable">
+                                    <td width="10%">
+                                        <img v-if="item.eventLevel=='高'" src="/static/img/h.png">
+                                        <img v-if="item.eventLevel=='中'" src="/static/img/m.png">
+                                        <img v-if="item.eventLevel=='低'" src="/static/img/l.png">
+                                    </td>
+                                    <td width="10%" class="mw1">{{item.eventName}}</td>
+                                    <td width="20%" class="mw2">{{item.srcHostName}}</td>
+                                    <td width="30%" class="mw3">{{item.eventMessage}}</td>
+                                    <td width="30%" class="mw3">{{item.eventStartTime}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rt-b">
+                <div class="bt-b" v-for="(l,item) in boot">
+                    <span class="bt-h el">{{item.name}}</span>
+                    <div class="bt-c">
+                        <span class="c-s">今日攻击统计 <span class="s-l">{{item.todayCount}}次</span></span>
+                        <span class="c-s">首页打开时间 {{item.openTime}}ms</span>
+                        <span class="c-s">域名解析时间 {{item.dnsTime}}ms</span>
+                        <span class="c-s">首页下载速度 {{item.downloadTime}}m/s</span>
+                        <div class="c-chart">
+                            <div class="chart-t">IP:{{item.ip}}</div>
+                            <div class="chart-c">
+                                <div class="c-block">
+                                    <div class="c-left">
+                                        <span class="cl-s1">CPU</span>
+                                        <span class="cl-s2">{{item.cpu}}%</span>
+                                        <span v-if="item.cpu<80" class="cl-s3">正常</span>
+                                        <span v-if="item.cpu>=80&&item.cpu<90" class="cl-s3 yes">警告</span>
+                                        <span v-if="item.cpu>=90" class="cl-s3 no">紧急</span>
+                                    </div>
+                                    <div class="c-right">
+                                        <div v-if="item.cpu<80" class="fill n" v-bind:style="{height:(item.cpu)+ '%'}"></div>
+                                        <div v-if="item.cpu>=80&&item.cpu<90" class="fill yes" v-bind:style="{height:(item.cpu)+ '%'}"></div>
+                                        <div v-if="item.cpu>=90" class="fill no" v-bind:style="{height:(item.cpu)+ '%'}"></div>
+                                    </div>
+                                </div>
+                                <div class="c-block">
+                                    <div class="c-left">
+                                        <span class="cl-s1">MEM</span>
+                                        <span class="cl-s2">{{item.mem}}%</span>
+                                        <span v-if="item.mem<80" class="cl-s3">正常</span>
+                                        <span v-if="item.mem>=80&&item.mem<90" class="cl-s3 yes">警告</span>
+                                        <span v-if="item.mem>=90" class="cl-s3 no">紧急</span>
+                                    </div>
+                                    <div class="c-right">
+                                        <div v-if="item.mem<80" class="fill n" v-bind:style="{height:(item.mem)+ '%'}"></div>
+                                        <div v-if="item.mem>=80&&item.mem<90" class="fill yes" v-bind:style="{height:(item.mem)+ '%'}"></div>
+                                        <div v-if="item.mem>=90" class="fill no" v-bind:style="{height:(item.mem)+ '%'}"></div>
+                                    </div>
+                                </div>
+                                <div class="c-block">
+                                    <div class="c-left">
+                                        <span class="cl-s1">DISK</span>
+                                        <span class="cl-s2">{{item.harddisk}}%</span>
+                                        <span v-if="item.harddisk<80" class="cl-s3">正常</span>
+                                        <span v-if="item.harddisk>=80&&item.harddisk<90" class="cl-s3 yes">警告</span>
+                                        <span v-if="item.harddisk>=90" class="cl-s3 no">紧急</span>
+                                    </div>
+                                    <div class="c-right">
+                                        <div v-if="item.harddisk<80" class="fill n" v-bind:style="{height:(item.harddisk)+ '%'}"></div>
+                                        <div v-if="item.harddisk>=80&&item.harddisk<90" class="fill yes" v-bind:style="{height:(item.harddisk)+ '%'}"></div>
+                                        <div v-if="item.harddisk>=90" class="fill no" v-bind:style="{height:(item.harddisk)+ '%'}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-chart1">
+                            <div class="chart-h">
+                                <span class="ch-l">Traffic (IN)</span>
+                            </div>
+                            <div class="chart-c" :id="'tu'+l"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="bgb">
+        <div class="warning">
+            <div class="w-t">
+                <span class="wt-l">警告</span>
+                <span class="time">{{timed1}}</span>
+                <div class="spinner"><i></i></div>
+            </div>
+            <span class="w-m">{{mmd.content}}</span>
+            <span class="w-c">检测时间 {{mmd.time}}</span>
+        </div>
+        <div class="emergency">
+            <div class="w-t">
+                <span class="wt-l">紧急</span>
+                <span class="time">{{timed1}}</span>
+                <div class="spinner"><i></i></div>
+            </div>
+            <span class="w-m el">{{mmd.content}}</span>
+            <div class="wb-l">
+                <span class="w-b el">检测时间 {{mmd.time}}</span>
+                <span class="w-b el">检测时间 2016年10月17日 10:12:52</span>
+            </div>
+            <div class="wb-l">
+                <div class="w-b">
+                    <span class="w-bt el">检测时间 2016年10月17日 10:12:52</span>
+                    <span class="w-bt el">检测时间 2016年10月17日 10:12:52</span>
+                </div>
+                <span class="w-b el">检测时间 2016年10月17日 10:12:52</span>
+            </div>
+            <div class="line"></div>
+            <div class="w-title"><i class="fa fa-info-circle"></i>请根据安全检测设备屏蔽相关攻击请求，或启用备用应用服务！</div>
+            <div class="w-btm">
+                <div class="btm-l">
+                    <div class="l-info bt-gray">
+                        <span class="el">首页打开时间</span>
+                        <span class="left">超时</span>
+                    </div>
+                    <div class="l-info bt-red">
+                        <span class="el">首页打开时间</span>
+                        <span class="left">超时</span>
+                    </div>
+                    <div class="l-info bt-red">
+                        <span class="el">首页打开时间</span>
+                        <span class="left">超时</span>
+                    </div>
+                    <div class="l-btm">
+                        <div class="high">高危18</div>
+                        <div class="middle">中危16</div>
+                        <div class="low">低危14</div>
+                    </div>
+                </div>
+                <div class="btm-m">
+                    <div class="mt-l bt-gray">IP:</div>
+                    <div class="mt-r bt-gray">10.12.225.6</div>
+                    <div class="mt-l bt-red">CPU:</div>
+                    <div class="mt-r bt-red">
+                        <div class="mt-bar bar-red">
+                            <div class="bar-i"></div>
+                        </div>
+                        <span>96%</span>
+                    </div>
+                    <div class="mt-l bt-gray">MEM:</div>
+                    <div class="mt-r bt-gray">
+                        <div class="mt-bar">
+                            <div class="bar-i"></div>
+                        </div>
+                        <span>16%</span>
+                    </div>
+                    <div class="btm-c"></div>
+                </div>
+                <div class="btm-r">
+                    <span class="el">GET /index_files/123.php HTTP/1.1 Pragma: no-cache Cache-Contro</span>
+                    <span class="el">GET /index_files/123.php HTTP/1.1 Pragma: no-cache Cache-Contro</span>
+                    <span class="el">GET /index_files/123.php HTTP/1.1 Pragma: no-cache Cache-Contro</span>
+                    <span class="el">GET /index_files/123.php HTTP/1.1 Pragma: no-cache Cache-Contro</span>
+                    <span class="el">GET /index_files/123.php HTTP/1.1 Pragma: no-cache Cache-Contro</span>
+                    <span class="el">GET /index_files/123.php HTTP/1.1 Pragma: no-cache Cache-Contro</span>
+                    <span class="el">GET /index_files/123.php HTTP/1.1 Pragma: no-cache Cache-Contro</span>
+                    <span class="el">GET /index_files/123.php HTTP/1.1 Pragma: no-cache Cache-Contro</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/libs/jQuery/jquery-2.2.0.min.js"></script>
+
+<script src="/static/libs/mod/mod.js"></script>
+<script type="text/javascript" src="/modules/vue/vue.js"></script>
+<script type="text/javascript" src="/modules/vueUI.js"></script>
+<script type="text/javascript" src="/show.js"></script>
+<script src="/static/libs/echarts/echarts.min.js"></script>
+<script src="/static/libs/echarts/map/js/china.js"></script>
+<script type="text/javascript">
+        require('show');
+    </script>
+</body>
+</html>

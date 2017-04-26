@@ -1,0 +1,1337 @@
+{
+    "res": {
+        "src/components/actionlog/actionlog.css": {
+            "uri": "/components/actionlog/actionlog.css",
+            "type": "css"
+        },
+        "actionlog": {
+            "uri": "/components/actionlog/actionlog.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueGrid"
+            ]
+        },
+        "src/components/alarm/alarm.css": {
+            "uri": "/components/alarm/alarm.css",
+            "type": "css",
+            "extras": {}
+        },
+        "alarm": {
+            "uri": "/components/alarm/alarm.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueGrid"
+            ]
+        },
+        "src/components/alarm/alarm.scss": {
+            "uri": "/components/alarm/alarm.scss",
+            "type": "scss"
+        },
+        "src/components/assets/assets.css": {
+            "uri": "/components/assets/assets.css",
+            "type": "css",
+            "extras": {}
+        },
+        "assets": {
+            "uri": "/components/assets/assets.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vue-validator"
+            ]
+        },
+        "src/components/assets/assets.scss": {
+            "uri": "/components/assets/assets.scss",
+            "type": "scss"
+        },
+        "src/components/assets1/assets1.css": {
+            "uri": "/components/assets1/assets1.css",
+            "type": "css",
+            "extras": {}
+        },
+        "assets1": {
+            "uri": "/components/assets1/assets1.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vue-validator"
+            ]
+        },
+        "src/components/assets1/assets1.scss": {
+            "uri": "/components/assets1/assets1.scss",
+            "type": "scss"
+        },
+        "src/components/count/count.css": {
+            "uri": "/components/count/count.css",
+            "type": "css",
+            "extras": {}
+        },
+        "count": {
+            "uri": "/components/count/count.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "src/components/count/count.scss": {
+            "uri": "/components/count/count.scss",
+            "type": "scss"
+        },
+        "src/components/counts/counts.css": {
+            "uri": "/components/counts/counts.css",
+            "type": "css",
+            "extras": {}
+        },
+        "counts": {
+            "uri": "/components/counts/counts.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "src/components/counts/counts.scss": {
+            "uri": "/components/counts/counts.scss",
+            "type": "scss"
+        },
+        "countsgroup": {
+            "uri": "/components/counts/countsgroup/countsgroup.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "countssite": {
+            "uri": "/components/counts/countssite/countssite.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "src/components/export/export.css": {
+            "uri": "/components/export/export.css",
+            "type": "css",
+            "extras": {}
+        },
+        "export": {
+            "uri": "/components/export/export.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueGrid"
+            ]
+        },
+        "src/components/export/export.scss": {
+            "uri": "/components/export/export.scss",
+            "type": "scss"
+        },
+        "src/components/group/group-input.css": {
+            "uri": "/components/group/group-input.css",
+            "type": "css"
+        },
+        "group-input": {
+            "uri": "/components/group/group-input.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vue-validator",
+                "vue-strap"
+            ]
+        },
+        "src/components/group/group.css": {
+            "uri": "/components/group/group.css",
+            "type": "css"
+        },
+        "group": {
+            "uri": "/components/group/group.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueGrid"
+            ]
+        },
+        "src/components/hole/hole.css": {
+            "uri": "/components/hole/hole.css",
+            "type": "css"
+        },
+        "hole": {
+            "uri": "/components/hole/hole.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueGrid"
+            ]
+        },
+        "src/components/hole/hole.scss": {
+            "uri": "/components/hole/hole.scss",
+            "type": "scss"
+        },
+        "src/components/index.html": {
+            "uri": "/index.html",
+            "type": "html",
+            "deps": [
+                "index"
+            ]
+        },
+        "index": {
+            "uri": "/index.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueUI",
+                "routers",
+                "pageTitle",
+                "UI",
+                "header",
+                "mainnav"
+            ]
+        },
+        "header": {
+            "uri": "/components/index/header.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "mainnav": {
+            "uri": "/components/index/mainnav.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "themeconfig": {
+            "uri": "/components/index/themeconfig.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "src/components/log/log.css": {
+            "uri": "/components/log/log.css",
+            "type": "css",
+            "extras": {}
+        },
+        "log": {
+            "uri": "/components/log/log.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueGrid"
+            ]
+        },
+        "src/components/log/log.scss": {
+            "uri": "/components/log/log.scss",
+            "type": "scss"
+        },
+        "src/components/login/login.css": {
+            "uri": "/login.css",
+            "type": "css",
+            "extras": {}
+        },
+        "src/components/login/login.html": {
+            "uri": "/login.html",
+            "type": "html",
+            "deps": [
+                "login"
+            ]
+        },
+        "login": {
+            "uri": "/login.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueUI"
+            ]
+        },
+        "src/components/login/login.scss": {
+            "uri": "/login.scss",
+            "type": "scss"
+        },
+        "src/components/privilege/privilege-input.css": {
+            "uri": "/components/privilege/privilege-input.css",
+            "type": "css"
+        },
+        "privilege-input": {
+            "uri": "/components/privilege/privilege-input.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vue-validator",
+                "vue-strap"
+            ]
+        },
+        "src/components/privilege/privilege.css": {
+            "uri": "/components/privilege/privilege.css",
+            "type": "css"
+        },
+        "privilege": {
+            "uri": "/components/privilege/privilege.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueGrid"
+            ]
+        },
+        "src/components/role/role-input.css": {
+            "uri": "/components/role/role-input.css",
+            "type": "css"
+        },
+        "role-input": {
+            "uri": "/components/role/role-input.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vue-validator",
+                "vue-strap"
+            ]
+        },
+        "src/components/role/role.css": {
+            "uri": "/components/role/role.css",
+            "type": "css"
+        },
+        "role": {
+            "uri": "/components/role/role.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueGrid"
+            ]
+        },
+        "routers": {
+            "uri": "/routers.js",
+            "type": "js",
+            "extras": {
+                "async": [
+                    "login",
+                    "actionlog",
+                    "privilege",
+                    "privilege-input",
+                    "role",
+                    "role-input",
+                    "user",
+                    "user-input",
+                    "user-info",
+                    "counts",
+                    "countsgroup",
+                    "countssite",
+                    "alarm",
+                    "export",
+                    "assets",
+                    "assets1",
+                    "log",
+                    "hole",
+                    "show",
+                    "group",
+                    "group-input",
+                    "404"
+                ]
+            },
+            "deps": [
+                "vue",
+                "vue-router"
+            ]
+        },
+        "src/components/show/show.css": {
+            "uri": "/show.css",
+            "type": "css",
+            "extras": {}
+        },
+        "src/components/show/show.html": {
+            "uri": "/show.html",
+            "type": "html",
+            "deps": [
+                "show"
+            ]
+        },
+        "show": {
+            "uri": "/show.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueUI"
+            ]
+        },
+        "src/components/show/show.scss": {
+            "uri": "/show.scss",
+            "type": "scss"
+        },
+        "temp": {
+            "uri": "/components/temp/temp.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueGrid"
+            ]
+        },
+        "charts": {
+            "uri": "/components/ui-demo/charts.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "forms-components": {
+            "uri": "/components/ui-demo/forms-components.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "forms-general": {
+            "uri": "/components/ui-demo/forms-general.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "forms-validation": {
+            "uri": "/components/ui-demo/forms-validation.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "forms-wizard": {
+            "uri": "/components/ui-demo/forms-wizard.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "layouts": {
+            "uri": "/components/ui-demo/layouts.js",
+            "type": "js",
+            "deps": [
+                "jquery"
+            ]
+        },
+        "mailbox-compose": {
+            "uri": "/components/ui-demo/mailbox-compose.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "mailbox-message": {
+            "uri": "/components/ui-demo/mailbox-message.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "mailbox": {
+            "uri": "/components/ui-demo/mailbox.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "tables": {
+            "uri": "/components/ui-demo/tables.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-alerts-tooltips": {
+            "uri": "/components/ui-demo/ui-alerts-tooltips.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-buttons": {
+            "uri": "/components/ui-demo/ui-buttons.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-checkboxes-radio": {
+            "uri": "/components/ui-demo/ui-checkboxes-radio.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-components": {
+            "uri": "/components/ui-demo/ui-components.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-helper-classes": {
+            "uri": "/components/ui-demo/ui-helper-classes.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-list-group": {
+            "uri": "/components/ui-demo/ui-list-group.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-modals": {
+            "uri": "/components/ui-demo/ui-modals.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-panels": {
+            "uri": "/components/ui-demo/ui-panels.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-progress-bars": {
+            "uri": "/components/ui-demo/ui-progress-bars.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-tabs-accordions": {
+            "uri": "/components/ui-demo/ui-tabs-accordions.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "ui-typography": {
+            "uri": "/components/ui-demo/ui-typography.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "widgets": {
+            "uri": "/components/ui-demo/widgets.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "src/components/user/user-input.css": {
+            "uri": "/components/user/user-input.css",
+            "type": "css",
+            "extras": {}
+        },
+        "resetpassword": {
+            "uri": "/components/user/resetpassword.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vue-validator",
+                "vue-strap"
+            ]
+        },
+        "user-info": {
+            "uri": "/components/user/user-info.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vue-validator",
+                "vue-strap"
+            ]
+        },
+        "src/components/user/user-input.css.css": {
+            "uri": "/components/user/user-input.css.css",
+            "type": "css"
+        },
+        "user-input": {
+            "uri": "/components/user/user-input.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vue-validator",
+                "vue-strap"
+            ]
+        },
+        "src/components/user/user-input.scss": {
+            "uri": "/components/user/user-input.scss",
+            "type": "scss"
+        },
+        "src/components/user/user.css": {
+            "uri": "/components/user/user.css",
+            "type": "css",
+            "extras": {}
+        },
+        "src/components/user/user.css.css": {
+            "uri": "/components/user/user.css.css",
+            "type": "css"
+        },
+        "user": {
+            "uri": "/components/user/user.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueGrid"
+            ]
+        },
+        "src/components/user/user.scss": {
+            "uri": "/components/user/user.scss",
+            "type": "scss"
+        },
+        "checkbox": {
+            "uri": "/components/widge/bootstrapUI/checkbox/checkbox.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "checkboxgrop": {
+            "uri": "/components/widge/bootstrapUI/checkboxgrop/checkboxgrop.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "chose": {
+            "uri": "/components/widge/bootstrapUI/chose/chose.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "radiogrop": {
+            "uri": "/components/widge/bootstrapUI/radiogrop/radiogrop.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "UI": {
+            "uri": "/components/widge/bootstrapUI/UI.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "chose"
+            ]
+        },
+        "pageTitle": {
+            "uri": "/components/widge/pageTitle/pageTitle.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "vueGrid": {
+            "uri": "/components/widge/vueGrid/vueGrid.js",
+            "type": "js",
+            "deps": [
+                "vue",
+                "vueUI"
+            ]
+        },
+        "tree": {
+            "uri": "/directives/tree.js",
+            "type": "js",
+            "deps": [
+                "vue"
+            ]
+        },
+        "lineFeed": {
+            "uri": "/filters/lineFeed.js",
+            "type": "js"
+        },
+        "conf": {
+            "uri": "/modules/conf.js",
+            "type": "js"
+        },
+        "vue-router": {
+            "uri": "/modules/vue/vue-router.js",
+            "type": "js"
+        },
+        "vue-strap": {
+            "uri": "/modules/vue/vue-strap.js",
+            "type": "js",
+            "deps": [
+                "vue-hot-reload-api",
+                "vue",
+                "-!babel!./../node_modules/vue-loader/lib/selector.js",
+                "-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js",
+                "!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js",
+                "-!vue-html-loader!./../node_modules/vue-loader/lib/template-rewriter.js"
+            ]
+        },
+        "vue-validator": {
+            "uri": "/modules/vue/vue-validator.js",
+            "type": "js"
+        },
+        "vue": {
+            "uri": "/modules/vue/vue.js",
+            "type": "js"
+        },
+        "vueUI": {
+            "uri": "/modules/vueUI.js",
+            "type": "js"
+        },
+        "static/css/font-awesome.min.css": {
+            "uri": "/static/css/font-awesome.min.css",
+            "type": "css"
+        },
+        "static/css/jquery.datetimepicker.css": {
+            "uri": "/static/css/jquery.datetimepicker.css",
+            "type": "css"
+        },
+        "static/css/jquery.range.css": {
+            "uri": "/static/css/jquery.range.css",
+            "type": "css"
+        },
+        "static/css/main.css": {
+            "uri": "/static/css/main.css",
+            "type": "css",
+            "extras": {}
+        },
+        "static/css/main.scss": {
+            "uri": "/static/css/main.scss",
+            "type": "scss"
+        },
+        "static/css/nifty.min.css": {
+            "uri": "/static/css/nifty.min.css",
+            "type": "css"
+        },
+        "static/css/style.css": {
+            "uri": "/static/css/style.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-brand/theme-coffee.min.css": {
+            "uri": "/static/css/themes/themes-brand/theme-coffee.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-brand/theme-dark.min.css": {
+            "uri": "/static/css/themes/themes-brand/theme-dark.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-brand/theme-dust.min.css": {
+            "uri": "/static/css/themes/themes-brand/theme-dust.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-brand/theme-light.min.css": {
+            "uri": "/static/css/themes/themes-brand/theme-light.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-brand/theme-lime.min.css": {
+            "uri": "/static/css/themes/themes-brand/theme-lime.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-brand/theme-mint.min.css": {
+            "uri": "/static/css/themes/themes-brand/theme-mint.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-brand/theme-navy.min.css": {
+            "uri": "/static/css/themes/themes-brand/theme-navy.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-brand/theme-ocean.min.css": {
+            "uri": "/static/css/themes/themes-brand/theme-ocean.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-brand/theme-purple.min.css": {
+            "uri": "/static/css/themes/themes-brand/theme-purple.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-mainnav/theme-coffee.min.css": {
+            "uri": "/static/css/themes/themes-mainnav/theme-coffee.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-mainnav/theme-dark.min.css": {
+            "uri": "/static/css/themes/themes-mainnav/theme-dark.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-mainnav/theme-dust.min.css": {
+            "uri": "/static/css/themes/themes-mainnav/theme-dust.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-mainnav/theme-light.min.css": {
+            "uri": "/static/css/themes/themes-mainnav/theme-light.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-mainnav/theme-lime.min.css": {
+            "uri": "/static/css/themes/themes-mainnav/theme-lime.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-mainnav/theme-mint.min.css": {
+            "uri": "/static/css/themes/themes-mainnav/theme-mint.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-mainnav/theme-navy.min.css": {
+            "uri": "/static/css/themes/themes-mainnav/theme-navy.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-mainnav/theme-ocean.min.css": {
+            "uri": "/static/css/themes/themes-mainnav/theme-ocean.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-mainnav/theme-purple.min.css": {
+            "uri": "/static/css/themes/themes-mainnav/theme-purple.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-navbar/theme-coffee.min.css": {
+            "uri": "/static/css/themes/themes-navbar/theme-coffee.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-navbar/theme-dark.min.css": {
+            "uri": "/static/css/themes/themes-navbar/theme-dark.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-navbar/theme-dust.min.css": {
+            "uri": "/static/css/themes/themes-navbar/theme-dust.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-navbar/theme-light.min.css": {
+            "uri": "/static/css/themes/themes-navbar/theme-light.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-navbar/theme-lime.min.css": {
+            "uri": "/static/css/themes/themes-navbar/theme-lime.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-navbar/theme-mint.min.css": {
+            "uri": "/static/css/themes/themes-navbar/theme-mint.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-navbar/theme-navy.min.css": {
+            "uri": "/static/css/themes/themes-navbar/theme-navy.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-navbar/theme-ocean.min.css": {
+            "uri": "/static/css/themes/themes-navbar/theme-ocean.min.css",
+            "type": "css"
+        },
+        "static/css/themes/themes-navbar/theme-purple.min.css": {
+            "uri": "/static/css/themes/themes-navbar/theme-purple.min.css",
+            "type": "css"
+        },
+        "static/css/zeta.css": {
+            "uri": "/static/css/zeta.css",
+            "type": "css"
+        },
+        "static/js/bg-images.js": {
+            "uri": "/static/js/bg-images.js",
+            "type": "js"
+        },
+        "static/js/nifty.min.js": {
+            "uri": "/static/js/nifty.min.js",
+            "type": "js",
+            "deps": [
+                "jquery"
+            ]
+        },
+        "static/libs/awesome/css/font-awesome.css": {
+            "uri": "/static/libs/awesome/css/font-awesome.css",
+            "type": "css"
+        },
+        "static/libs/awesome/css/font-awesome.min.css": {
+            "uri": "/static/libs/awesome/css/font-awesome.min.css",
+            "type": "css"
+        },
+        "static/libs/bootstrap/css/bootstrap.min.css": {
+            "uri": "/static/libs/bootstrap/css/bootstrap.min.css",
+            "type": "css"
+        },
+        "static/libs/bootstrap/dist/bootstrap-tagsinput-angular.js": {
+            "uri": "/static/libs/bootstrap/dist/bootstrap-tagsinput-angular.js",
+            "type": "js"
+        },
+        "static/libs/bootstrap/dist/bootstrap-tagsinput-angular.min.js": {
+            "uri": "/static/libs/bootstrap/dist/bootstrap-tagsinput-angular.min.js",
+            "type": "js",
+            "extras": {}
+        },
+        "static/libs/bootstrap/dist/bootstrap-tagsinput-angular.min.js.css": {
+            "uri": "/static/libs/bootstrap/dist/bootstrap-tagsinput-angular.min.js.css",
+            "type": "css"
+        },
+        "static/libs/bootstrap/dist/bootstrap-tagsinput.css": {
+            "uri": "/static/libs/bootstrap/dist/bootstrap-tagsinput.css",
+            "type": "css"
+        },
+        "static/libs/bootstrap/dist/bootstrap-tagsinput.js": {
+            "uri": "/static/libs/bootstrap/dist/bootstrap-tagsinput.js",
+            "type": "js"
+        },
+        "static/libs/bootstrap/dist/bootstrap-tagsinput.less": {
+            "uri": "/static/libs/bootstrap/dist/bootstrap-tagsinput.less",
+            "type": "less"
+        },
+        "static/libs/bootstrap/dist/bootstrap-tagsinput.min.js": {
+            "uri": "/static/libs/bootstrap/dist/bootstrap-tagsinput.min.js",
+            "type": "js",
+            "extras": {}
+        },
+        "static/libs/bootstrap/dist/bootstrap-tagsinput.min.js.css": {
+            "uri": "/static/libs/bootstrap/dist/bootstrap-tagsinput.min.js.css",
+            "type": "css"
+        },
+        "static/libs/bootstrap/js/bootstrap.min.js": {
+            "uri": "/static/libs/bootstrap/js/bootstrap.min.js",
+            "type": "js"
+        },
+        "static/libs/chosen/chosen.css": {
+            "uri": "/static/libs/chosen/chosen.css",
+            "type": "css"
+        },
+        "static/libs/chosen/chosen.jquery.js": {
+            "uri": "/static/libs/chosen/chosen.jquery.js",
+            "type": "js"
+        },
+        "static/libs/chosen/chosen.jquery.min.js": {
+            "uri": "/static/libs/chosen/chosen.jquery.min.js",
+            "type": "js"
+        },
+        "static/libs/chosen/chosen.min.css": {
+            "uri": "/static/libs/chosen/chosen.min.css",
+            "type": "css"
+        },
+        "static/libs/chosen/chosen.proto.js": {
+            "uri": "/static/libs/chosen/chosen.proto.js",
+            "type": "js"
+        },
+        "static/libs/chosen/chosen.proto.min.js": {
+            "uri": "/static/libs/chosen/chosen.proto.min.js",
+            "type": "js"
+        },
+        "static/libs/chosen/docsupport/event.simulate.js": {
+            "uri": "/static/libs/chosen/docsupport/event.simulate.js",
+            "type": "js"
+        },
+        "static/libs/chosen/docsupport/prism.css": {
+            "uri": "/static/libs/chosen/docsupport/prism.css",
+            "type": "css"
+        },
+        "static/libs/chosen/docsupport/prism.js": {
+            "uri": "/static/libs/chosen/docsupport/prism.js",
+            "type": "js"
+        },
+        "static/libs/chosen/docsupport/style.css": {
+            "uri": "/static/libs/chosen/docsupport/style.css",
+            "type": "css"
+        },
+        "static/libs/chosen/index.html": {
+            "uri": "/static/libs/chosen/index.html",
+            "type": "html"
+        },
+        "static/libs/chosen/index.proto.html": {
+            "uri": "/static/libs/chosen/index.proto.html",
+            "type": "html"
+        },
+        "static/libs/chosen/options.html": {
+            "uri": "/static/libs/chosen/options.html",
+            "type": "html"
+        },
+        "static/libs/echarts/echarts.min.js": {
+            "uri": "/static/libs/echarts/echarts.min.js",
+            "type": "js"
+        },
+        "static/libs/echarts/echarts.min1 (2).js": {
+            "uri": "/static/libs/echarts/echarts.min1 (2).js",
+            "type": "js"
+        },
+        "static/libs/echarts/map/js/china-contour.js": {
+            "uri": "/static/libs/echarts/map/js/china-contour.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/china.js": {
+            "uri": "/static/libs/echarts/map/js/china.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/anhui.js": {
+            "uri": "/static/libs/echarts/map/js/province/anhui.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/aomen.js": {
+            "uri": "/static/libs/echarts/map/js/province/aomen.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/beijing.js": {
+            "uri": "/static/libs/echarts/map/js/province/beijing.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/chongqing.js": {
+            "uri": "/static/libs/echarts/map/js/province/chongqing.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/fujian.js": {
+            "uri": "/static/libs/echarts/map/js/province/fujian.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/gansu.js": {
+            "uri": "/static/libs/echarts/map/js/province/gansu.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/guangdong.js": {
+            "uri": "/static/libs/echarts/map/js/province/guangdong.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/guangxi.js": {
+            "uri": "/static/libs/echarts/map/js/province/guangxi.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/guizhou.js": {
+            "uri": "/static/libs/echarts/map/js/province/guizhou.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/hainan.js": {
+            "uri": "/static/libs/echarts/map/js/province/hainan.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/hebei.js": {
+            "uri": "/static/libs/echarts/map/js/province/hebei.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/heilongjiang.js": {
+            "uri": "/static/libs/echarts/map/js/province/heilongjiang.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/henan.js": {
+            "uri": "/static/libs/echarts/map/js/province/henan.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/hubei.js": {
+            "uri": "/static/libs/echarts/map/js/province/hubei.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/hunan.js": {
+            "uri": "/static/libs/echarts/map/js/province/hunan.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/jiangsu.js": {
+            "uri": "/static/libs/echarts/map/js/province/jiangsu.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/jiangxi.js": {
+            "uri": "/static/libs/echarts/map/js/province/jiangxi.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/jilin.js": {
+            "uri": "/static/libs/echarts/map/js/province/jilin.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/liaoning.js": {
+            "uri": "/static/libs/echarts/map/js/province/liaoning.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/neimenggu.js": {
+            "uri": "/static/libs/echarts/map/js/province/neimenggu.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/ningxia.js": {
+            "uri": "/static/libs/echarts/map/js/province/ningxia.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/qinghai.js": {
+            "uri": "/static/libs/echarts/map/js/province/qinghai.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/shandong.js": {
+            "uri": "/static/libs/echarts/map/js/province/shandong.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/shanghai.js": {
+            "uri": "/static/libs/echarts/map/js/province/shanghai.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/shanxi.js": {
+            "uri": "/static/libs/echarts/map/js/province/shanxi.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/shanxi1.js": {
+            "uri": "/static/libs/echarts/map/js/province/shanxi1.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/sichuan.js": {
+            "uri": "/static/libs/echarts/map/js/province/sichuan.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/tianjin.js": {
+            "uri": "/static/libs/echarts/map/js/province/tianjin.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/xianggang.js": {
+            "uri": "/static/libs/echarts/map/js/province/xianggang.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/xinjiang.js": {
+            "uri": "/static/libs/echarts/map/js/province/xinjiang.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/xizang.js": {
+            "uri": "/static/libs/echarts/map/js/province/xizang.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/yunnan.js": {
+            "uri": "/static/libs/echarts/map/js/province/yunnan.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/province/zhejiang.js": {
+            "uri": "/static/libs/echarts/map/js/province/zhejiang.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/map/js/world.js": {
+            "uri": "/static/libs/echarts/map/js/world.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/theme/dark.js": {
+            "uri": "/static/libs/echarts/theme/dark.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/theme/infographic.js": {
+            "uri": "/static/libs/echarts/theme/infographic.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/theme/macarons.js": {
+            "uri": "/static/libs/echarts/theme/macarons.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/theme/roma.js": {
+            "uri": "/static/libs/echarts/theme/roma.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/theme/shine.js": {
+            "uri": "/static/libs/echarts/theme/shine.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/echarts/theme/vintage.js": {
+            "uri": "/static/libs/echarts/theme/vintage.js",
+            "type": "js",
+            "deps": [
+                "echarts"
+            ]
+        },
+        "static/libs/jQuery/FastClick.min.js": {
+            "uri": "/static/libs/jQuery/FastClick.min.js",
+            "type": "js",
+            "deps": [
+                "jquery"
+            ]
+        },
+        "static/libs/jQuery/jquery-2.2.0.min.js": {
+            "uri": "/static/libs/jQuery/jquery-2.2.0.min.js",
+            "type": "js"
+        },
+        "static/libs/jQuery/jquery-2.2.4.js": {
+            "uri": "/static/libs/jQuery/jquery-2.2.4.js",
+            "type": "js"
+        },
+        "static/libs/jQuery/jQuery.cookie.js": {
+            "uri": "/static/libs/jQuery/jQuery.cookie.js",
+            "type": "js",
+            "deps": [
+                "jquery"
+            ]
+        },
+        "static/libs/jQuery/jquery.datetimepicker.full.js": {
+            "uri": "/static/libs/jQuery/jquery.datetimepicker.full.js",
+            "type": "js"
+        },
+        "static/libs/jQuery/jquery.range.js": {
+            "uri": "/static/libs/jQuery/jquery.range.js",
+            "type": "js"
+        },
+        "static/libs/mod/mod.js": {
+            "uri": "/static/libs/mod/mod.js",
+            "type": "js"
+        },
+        "static/libs/pace/pace.min.js": {
+            "uri": "/static/libs/pace/pace.min.js",
+            "type": "js"
+        },
+        "static/libs/pace/themes/pace-theme-barber-shop.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-barber-shop.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-big-counter.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-big-counter.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-bounce.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-bounce.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-center-atom.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-center-atom.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-center-circle.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-center-circle.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-center-radar.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-center-radar.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-center-simple.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-center-simple.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-corner-indicator.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-corner-indicator.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-fill-left.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-fill-left.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-flash.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-flash.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-flat-top.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-flat-top.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-loading-bar.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-loading-bar.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-mac-osx.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-mac-osx.css",
+            "type": "css"
+        },
+        "static/libs/pace/themes/pace-theme-minimal.css": {
+            "uri": "/static/libs/pace/themes/pace-theme-minimal.css",
+            "type": "css"
+        },
+        "static/libs/ztree/jquery.ztree.all-3.5.min.js": {
+            "uri": "/static/libs/ztree/jquery.ztree.all-3.5.min.js",
+            "type": "js"
+        },
+        "static/libs/ztree/zTreeStyle/zTreeStyle.css": {
+            "uri": "/static/libs/ztree/zTreeStyle/zTreeStyle.css",
+            "type": "css"
+        }
+    },
+    "pkg": {}
+}

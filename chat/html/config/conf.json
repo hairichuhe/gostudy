@@ -1,0 +1,6 @@
+{
+    "host":"http://112.65.228.6:16524/api",         //主机地址112.65.228.6:16524
+    "auth_host":"http://112.65.228.6:16524",        //认证地址
+    "client_id":"clientapp",               //app授权id
+    "client_secret":"123456"              //app授权密码
+}

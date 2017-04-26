@@ -1,112 +1,66 @@
-// tcptest
 package main
 
 import (
-	"encoding/json"
+	"database/sql"
 	"fmt"
-	"net"
-	"os"
-	"strconv"
-	"strings"
 
-	"utils/path"
+	_ "github.com/go-sql-driver/mysql"
 )
 
-type Event struct {
-	Code int    //100 更新关键词   200 网站扫描
-	Obj  string //100传文件  200传网站url
-}
-
-type File struct {
-	Path    string
-	SinSize int
-	Size    int
-	SinNum  int
-}
-
 func main() {
-	fmt.Println("Starting the server...")
-	listener, err := net.Listen("tcp", "0.0.0.0:50000")
+	// Open database connection
+	db, err := sql.Open("mysql", "root:root@tcp(127.0.0.1:3306)/api?charset=utf8")
 	if err != nil {
-		fmt.Println("Listen Error:", err.Error())
-		return
+		panic(err.Error()) // Just for example purpose. You should use proper error handling instead of panic
 	}
-	for {
-		conn, err := listener.Accept()
+	defer db.Close()
+
+	// Execute the query
+	rows, err := db.Query("SELECT * FROM ip_location")
+	if err != nil {
+		panic(err.Error()) // proper error handling instead of panic in your app
+	}
+
+	// Get column names
+	columns, err := rows.Columns()
+	if err != nil {
+		panic(err.Error()) // proper error handling instead of panic in your app
+	}
+
+	// Make a slice for the values
+	values := make([]sql.RawBytes, len(columns))
+
+	// rows.Scan wants '[]interface{}' as an argument, so we must copy the
+	// references into such a slice
+	// See http://code.google.com/p/go-wiki/wiki/InterfaceSlice for details
+	scanArgs := make([]interface{}, len(values))
+	for i := range values {
+		scanArgs[i] = &values[i]
+	}
+
+	// Fetch rows
+	for rows.Next() {
+		// get RawBytes from data
+		err = rows.Scan(scanArgs...)
 		if err != nil {
-			fmt.Println("Accept Error:", err.Error())
-			return
+			panic(err.Error()) // proper error handling instead of panic in your app
 		}
-		go taskIn(conn)
-	}
-	defer listener.Close()
-}
 
-func taskIn(conn net.Conn) {
-	remote := conn.RemoteAddr().String()
-	fmt.Println(remote, " connected!")
-	buf := make([]byte, 512)
-	size, err := conn.Read(buf)
-	if err != nil {
-		fmt.Println("Read Error:", err.Error())
-	}
-	var event Event
-	err = json.Unmarshal(buf[:size], &event)
-	if err != nil {
-		fmt.Println("Unmarshal Error:", err.Error())
-		return
-	}
-	fmt.Println("Person after Unmarshal:", event)
-	//		conn.Write([]byte("[{"))
-
-	fmt.Println(event.Code)
-	switch event.Code {
-	case 100:
-		fmt.Println("100")
-	case 200:
-		fileTo(conn, event.Obj)
-	default:
-		fmt.Println("I don't konw!")
-	}
-	//	conn.Close()
-}
-
-func fileTo(conn net.Conn, fileInfo string) {
-	fileInfo = strings.Replace(fileInfo, "&", "\"", -1)
-	fileInfo = strings.Replace(fileInfo, "@", ":", -1)
-	fileInfo = "{" + fileInfo + "}"
-	var file File
-	err := json.Unmarshal([]byte(fileInfo), &file)
-	if err != nil {
-		fmt.Println("Unmarshal Error:", err.Error())
-	}
-	nowPath, _ := path.GetCurrentPath()
-	wordFile := nowPath + "badWord.txt"
-	pFile, err := os.OpenFile(wordFile, os.O_RDWR|os.O_CREATE, 0666)
-	if err != nil {
-		panic("File '" + wordFile + "' in PipelineFile open failed.")
-	}
-	i := 0
-	conn.Write([]byte("{\"next\":" + strconv.Itoa(i) + "}"))
-	fmt.Println(file.SinNum)
-	for {
-		i++
-		if i == file.SinNum {
-			conn.Close()
-			break
-		} else {
-			buf := make([]byte, 1024)
-			size, err := conn.Read(buf)
-			if err != nil {
-				fmt.Println("Read Error:", err.Error())
-				return
-			}
-			_, err = pFile.Write(buf[:size])
-			if err != nil {
-				fmt.Println("写入文件出错！")
+		// Now do something with the data.
+		// Here we just print each column as a string.
+		var value string
+		for i, col := range values {
+			// Here we can check if the value is nil (NULL value)
+			if col == nil {
+				value = "NULL"
 			} else {
-				conn.Write([]byte("{\"next\":" + strconv.Itoa(i) + "}"))
+				value = string(col)
 			}
+			fmt.Println(columns[i], ": ", value)
 		}
+		fmt.Println("-----------------------------------")
+	}
+	if err = rows.Err(); err != nil {
+		panic(err.Error()) // proper error handling instead of panic in your app
 	}
 }

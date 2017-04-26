@@ -2,6 +2,8 @@ package main
 
 import (
 	"crypto/sha1"
+	"database/sql"
+	"encoding/base64"
 	"encoding/xml"
 	"fmt"
 	"io"
@@ -12,11 +14,13 @@ import (
 	"sort"
 	"strings"
 	"time"
+	"utils/aes"
 	"utils/httputil"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/bitly/go-simplejson"
 	"github.com/davecgh/go-spew/spew"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 const (
@@ -27,7 +31,7 @@ const (
 	//TUURL  = "http://127.0.0.1:8989/postpage"
 	TUURL = "http://www.tuling123.com/openapi/api"
 	//-------menukey自定义菜单按键值
-	MENUKEY_1 = "123"
+	MENUKEY_1 = "V1001_TODAY_CALLME"
 	MENUKEY_2 = ""
 	MENUKEY_3 = ""
 )
@@ -61,6 +65,15 @@ type Message struct {
 
 var url, keyword string
 var token Token
+var db *sql.DB
+
+func init() {
+	db, _ = sql.Open("mysql", "root:root@tcp(192.168.0.231:3306)/webcare?charset=utf8")
+	//	db, _ = sql.Open("mysql", "root:root@tcp(127.0.0.1:3306)/api?charset=utf8")
+	db.SetMaxOpenConns(200)
+	db.SetMaxIdleConns(100)
+	db.Ping()
+}
 
 type Movie struct {
 	Title      string
@@ -221,7 +234,11 @@ func (message Message) reEvent() (response Message) {
 			Content:      "亲爱的你回来吧，有什么建议可以告诉我哦，只是你不要走"}
 	default:
 		if message.EventKey == MENUKEY_1 {
-
+			response = Message{ToUserName: message.FromUserName,
+				FromUserName: message.ToUserName,
+				CreateTime:   time.Now().Unix(),
+				MsgType:      "text",
+				Content:      "你好，找我有什么事吗~"}
 		}
 
 	}
@@ -272,6 +289,27 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, string(out))
 
 }
+func getinfo(w http.ResponseWriter, r *http.Request) {
+	body, _ := ioutil.ReadAll(r.Body)
+	userjs, _ := simplejson.NewJson(body)
+	code, _ := userjs.Get("code").String()
+	if code != "" {
+		url := "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + AppId + "&secret=" + Appsecret + "&code=" + code + "&grant_type=authorization_code"
+		js, _ := simplejson.NewJson([]byte(httputil.HttpGet(url)))
+		webtoken, _ := js.Get("access_token").String()
+		userid, _ := js.Get("openid").String()
+		if webtoken != "" {
+			infourl := "https://api.weixin.qq.com/sns/userinfo?access_token=" + webtoken + "&openid=" + userid + "&lang=zh_CN"
+			fmt.Println(infourl)
+			io.WriteString(w, httputil.HttpGet(infourl))
+		} else {
+			fmt.Println(js)
+			io.WriteString(w, "获取网页授权出错")
+		}
+	} else {
+		io.WriteString(w, "请传入code！")
+	}
+}
 
 func getToken() {
 	url := "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + AppId + "&secret=" + Appsecret
@@ -302,33 +340,9 @@ func postmenu() {
 		{
 	    "button":[
 			{
-		        "name":"菜单1",
-		        "sub_button":[
-	            {	
-	               "type":"view",
-	               "name":"菜单1-1",
-	               "url":"http://tevei.tunnel.qydev.com/html/1-1.html"
-	            },
-	            {
-	               "type":"view",
-	               "name":"菜单1-2",
-	               "url":"http://tevei.tunnel.qydev.com/html/1-2.html"
-	            },
-	            {
-	               "type":"view",
-	               "name":"菜单1-3",
-	               "url":"http://tevei.tunnel.qydev.com/html/1-3.html"
-	            },
-	            {
-	               "type":"view",
-	               "name":"菜单1-4",
-	               "url":"http://tevei.tunnel.qydev.com/html/1-4.html"
-	            },
-	            {
-	               "type":"view",
-	               "name":"菜单1-5",
-	               "url":"http://tevei.tunnel.qydev.com/html/1-5.html"
-	            }]
+		        "type":"view",
+	            "name":"网站群",
+	            "url":"http://tevei.tunnel.2bdata.com"
 		    },
 		    {	
 		        "type":"click",
@@ -336,33 +350,9 @@ func postmenu() {
 		        "key":"V1001_TODAY_CALLME"
 		    },
 		    {
-		        "name":"菜单2",
-		        "sub_button":[
-	            {	
-	               "type":"view",
-	               "name":"菜单2-1",
-	               "url":"http://tevei.tunnel.qydev.com/html/2-1.html"
-	            },
-	            {
-	               "type":"view",
-	               "name":"菜单2-2",
-	               "url":"http://tevei.tunnel.qydev.com/html/2-2.html"
-	            },
-	            {
-	               "type":"view",
-	               "name":"菜单2-3",
-	               "url":"http://tevei.tunnel.qydev.com/html/2-3.html"
-	            },
-	            {
-	               "type":"view",
-	               "name":"菜单2-4",
-	               "url":"http://tevei.tunnel.qydev.com/html/2-4.html"
-	            },
-	            {
-	               "type":"view",
-	               "name":"菜单2-5",
-	               "url":"http://tevei.tunnel.qydev.com/html/2-5.html"
-	            }]
+				"type":"view",
+		        "name":"大平台",
+		        "url":"http://www.wangxiaojun.top"
 		    }]
 		 }
 		`
@@ -388,10 +378,108 @@ func postmenu() {
 	}
 }
 
-func main() {
+func query(str string) []map[string]string {
+	rows, err := db.Query("SELECT * FROM tb_user WHERE " + str)
+	fmt.Println("SELECT * FROM tb_user WHERE " + str)
+	fmt.Println(rows)
+	defer rows.Close()
+	checkError(err)
+	columns, err := rows.Columns()
 
-	http.HandleFunc("/", mainHandler)
-	http.Handle("/html/", http.StripPrefix("/html/", http.FileServer(http.Dir("./html/"))))
+	if err != nil {
+		panic(err.Error()) // proper error handling instead of panic in your app
+	}
+	values := make([]sql.RawBytes, len(columns))
+
+	scanArgs := make([]interface{}, len(values))
+	result := make([]map[string]string, 0)
+	for i := range values {
+		scanArgs[i] = &values[i]
+	}
+	for rows.Next() {
+		err = rows.Scan(scanArgs...)
+		if err != nil {
+			panic(err.Error())
+		}
+		row := make(map[string]string)
+		var value string
+		for i, col := range values {
+			if col == nil {
+				value = "NULL"
+			} else {
+				value = string(col)
+			}
+			row[columns[i]] = value
+		}
+		result = append(result, row)
+	}
+	if err = rows.Err(); err != nil {
+		panic(err.Error()) // proper error handling instead of panic in your app
+	}
+	fmt.Println(result)
+	return result
+}
+
+func myToken(w http.ResponseWriter, r *http.Request) {
+	body, _ := ioutil.ReadAll(r.Body)
+	userjs, _ := simplejson.NewJson(body)
+	userName, _ := userjs.Get("username").String()
+	openId, _ := userjs.Get("openid").String()
+	//	passWord, _ := userjs.Get("password").String()
+	if userName == "" {
+		fmt.Println("这是获取！")
+		arr := query("OPENID=\"" + openId + "\"")
+		if len(arr) > 0 {
+			aesEnc := aes.AesEncrypt{}
+			uname := arr[0]["USERNAME"]
+			arr, _ := base64.StdEncoding.DecodeString(arr[0]["USERPASSWORD"])
+			pword, err := aesEnc.Decrypt(arr)
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+			fmt.Println(uname)
+			fmt.Println(pword)
+			fmt.Fprintf(w, getMyToken(uname, pword))
+		} else {
+			fmt.Fprintf(w, "{meta:{success:false,code:404,message:\"您的账号暂未绑定！\"}}")
+		}
+	} else {
+		fmt.Println("这是绑定")
+		passWord, _ := userjs.Get("password").String()
+		fmt.Fprintf(w, getMyToken(userName, passWord))
+	}
+}
+
+func getMyToken(u, p string) string {
+
+	client := &http.Client{}
+
+	req, err := http.NewRequest("POST", "http://112.65.230.184/oauth/token", strings.NewReader("client_id=clientapp&client_secret=123456&grant_type=password&username="+u+"&password="+p))
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	req.Header.Set("Authorization", "Basic Y2xpZW50YXBwOjEyMzQ1Ng==")
+	fmt.Println(req.Body)
+
+	resp, err := client.Do(req)
+
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+	}
+	return string(body)
+}
+
+func main() {
+	http.HandleFunc("/chat", mainHandler)
+	http.HandleFunc("/info", getinfo)
+	http.HandleFunc("/api/user/getToken", myToken)
+	http.Handle("/", http.FileServer(http.Dir("C:/Users/jerry/AppData/Local/.fis3-tmp/www")))
 	setMenu()
 	log.Fatal(http.ListenAndServe(":80", nil))
 }

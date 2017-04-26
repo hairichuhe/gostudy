@@ -1,26 +1,25 @@
 package main // queryip project main.go
 
 import (
+	"encoding/base64"
 	"fmt"
-	"time"
-
-	"github.com/bitly/go-simplejson"
+	"utils/aes"
 )
 
 func main() {
-	fmt.Println(time.Now().Unix())
-	aaa()
-}
-
-func aaa() {
-	str := `{"errcode":0,"errmsg":"ok"}`
-	str1 := `{"errcode":40013,"errmsg":"invalid appid"}`
-	js, _ := simplejson.NewJson([]byte(str))
-	js1, _ := simplejson.NewJson([]byte(str1))
-
-	t, _ := js.Get("errcode").Int()
-	t1, _ := js1.Get("access_token").String()
-
-	fmt.Println(t)
-	fmt.Println(t1 == "")
+	aesEnc := aes.AesEncrypt{}
+	arrEncrypt, err := aesEnc.Encrypt("!@#EDCvfr4")
+	if err != nil {
+		fmt.Println(arrEncrypt)
+		return
+	}
+	str := base64.StdEncoding.EncodeToString(arrEncrypt)
+	fmt.Println(str)
+	arr, _ := base64.StdEncoding.DecodeString(str)
+	strMsg, err := aesEnc.Decrypt(arr)
+	if err != nil {
+		fmt.Println(arrEncrypt)
+		return
+	}
+	fmt.Println(strMsg)
 }

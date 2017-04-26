@@ -1,0 +1,157 @@
+.container .content {
+  width: calc(100vw - 230px - (100vw - 100%));
+  height: auto;
+  margin: 10px;
+  min-width: 1136px;
+  overflow-x: auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: center; }
+  .container .content .export {
+    width: 800px;
+    background-color: #fff; }
+    .container .content .export .handle {
+      width: 100%;
+      height: 60px;
+      padding: 10px 30px;
+      box-sizing: border-box; }
+      .container .content .export .handle span {
+        float: left;
+        line-height: 26px; }
+      .container .content .export .handle div.chose {
+        width: 220px;
+        height: 100%;
+        display: inline-block;
+        border: 1px solid #ccc;
+        height: 26px;
+        line-height: 26px;
+        float: left; }
+        .container .content .export .handle div.chose ul.chosen-choices {
+          background: none !important;
+          border-radius: 0 !important;
+          background-image: none !important;
+          height: 28px;
+          display: inline-block; }
+        .container .content .export .handle div.chose div.chosen-container {
+          margin-top: -3px; }
+          .container .content .export .handle div.chose div.chosen-container a.chosen-single {
+            background: none;
+            box-shadow: none;
+            border: none; }
+      .container .content .export .handle button {
+        float: right;
+        height: 28px;
+        padding: 0px 10px;
+        background: #999999 none repeat scroll 0% 0%;
+        color: white;
+        border-radius: 4px; }
+    .container .content .export .head {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      font-size: 24px;
+      font-weight: bold;
+      text-indent: 30px;
+      float: left;
+      margin-bottom: 40px; }
+    .container .content .export .body {
+      width: 100%;
+      float: left;
+      font-size: 12px; }
+      .container .content .export .body .b-content {
+        width: 100%;
+        float: left;
+        height: auto;
+        line-height: 25px;
+        text-indent: 30px; }
+      .container .content .export .body .b-l {
+        width: 550px;
+        float: left; }
+        .container .content .export .body .b-l .bl-top {
+          height: 120px;
+          padding-left: 10px; }
+          .container .content .export .body .b-l .bl-top div {
+            width: 100%;
+            float: left;
+            height: 25px;
+            line-height: 25px; }
+      .container .content .export .body .b-rt {
+        width: 250px;
+        float: left; }
+        .container .content .export .body .b-rt .br-top {
+          height: 100px;
+          margin: 10px;
+          outline: 1px solid #A5A5A5;
+          float: left; }
+          .container .content .export .body .b-rt .br-top div {
+            width: 100%;
+            float: left;
+            height: 25px;
+            line-height: 25px; }
+            .container .content .export .body .b-rt .br-top div span {
+              width: 50px;
+              display: inline-block; }
+      .container .content .export .body .t-l, .container .content .export .body .t-r, .container .content .export .body .t-f, .container .content .export .body .t-f-b {
+        width: 240px;
+        height: 260px;
+        border: 1px solid #d9d9d9;
+        margin: 10px 0;
+        float: left; }
+      .container .content .export .body .t-r {
+        width: 550px;
+        margin-left: 6px; }
+      .container .content .export .body .t-f {
+        width: 100%;
+        height: 280px; }
+      .container .content .export .body .t-f-b {
+        width: 100%;
+        height: 900px; }
+      .container .content .export .body .title {
+        font-weight: bold;
+        border-bottom: 1px solid #d9d9d9;
+        text-indent: 10px;
+        height: 20px;
+        line-height: 20px;
+        float: left;
+        width: 100%; }
+      .container .content .export .body .m-title {
+        width: 100%;
+        height: 25px;
+        line-height: 25px;
+        float: left; }
+      .container .content .export .body .b-table {
+        width: 100%;
+        height: 100%;
+        float: left;
+        border: none;
+        border-right: 1px solid #d9d9d9;
+        border-bottom: 1px solid #d9d9d9;
+        border-spacing: 0; }
+        .container .content .export .body .b-table .t-head {
+          background-color: #D9E2F3; }
+        .container .content .export .body .b-table tr {
+          width: 100%;
+          height: auto; }
+          .container .content .export .body .b-table tr th {
+            border-left: 1px solid #d9d9d9;
+            border-top: 1px solid #d9d9d9;
+            height: 30px;
+            line-height: 30px; }
+          .container .content .export .body .b-table tr td {
+            text-align: center;
+            line-height: 20px;
+            border-left: 1px solid #d9d9d9;
+            border-top: 1px solid #d9d9d9; }
+            .container .content .export .body .b-table tr td span {
+              display: block;
+              width: 100%;
+              line-height: 20px;
+              height: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis; }
+      .container .content .export .body .r-l {
+        margin-left: 0;
+        margin-right: 6px; }
+
+/*# sourceMappingURL=/components/export/export.css.map */
