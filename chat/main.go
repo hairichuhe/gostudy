@@ -2,8 +2,6 @@ package main
 
 import (
 	"crypto/sha1"
-	"database/sql"
-	"encoding/base64"
 	"encoding/xml"
 	"fmt"
 	"io"
@@ -14,16 +12,15 @@ import (
 	"sort"
 	"strings"
 	"time"
-	"utils/aes"
 	"utils/httputil"
+	//	"utils/path"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/bitly/go-simplejson"
 	"github.com/davecgh/go-spew/spew"
-	_ "github.com/go-sql-driver/mysql"
 )
 
-const (
+var (
 	AppId     = "wxc3b7890c78873a70"
 	Appsecret = "d70472a21a18928616869965116963c8"
 	TOKEN     = "111111"
@@ -34,6 +31,7 @@ const (
 	MENUKEY_1 = "V1001_TODAY_CALLME"
 	MENUKEY_2 = ""
 	MENUKEY_3 = ""
+	menu      = ""
 )
 
 type Message struct {
@@ -65,15 +63,6 @@ type Message struct {
 
 var url, keyword string
 var token Token
-var db *sql.DB
-
-func init() {
-	db, _ = sql.Open("mysql", "root:root@tcp(192.168.0.231:3306)/webcare?charset=utf8")
-	//	db, _ = sql.Open("mysql", "root:root@tcp(127.0.0.1:3306)/api?charset=utf8")
-	db.SetMaxOpenConns(200)
-	db.SetMaxIdleConns(100)
-	db.Ping()
-}
 
 type Movie struct {
 	Title      string
@@ -86,6 +75,11 @@ type Token struct {
 	to string
 	ex int64
 }
+
+//func init() {
+//	setconst()
+//	setMenu()
+//}
 
 func checkError(err error) {
 	if err != nil {
@@ -378,108 +372,23 @@ func postmenu() {
 	}
 }
 
-func query(str string) []map[string]string {
-	rows, err := db.Query("SELECT * FROM tb_user WHERE " + str)
-	fmt.Println("SELECT * FROM tb_user WHERE " + str)
-	fmt.Println(rows)
-	defer rows.Close()
+func setconst() {
+	nowPath, _ := path.GetCurrentPath()
+	dat, err := ioutil.ReadFile(nowPath + "conf.json")
 	checkError(err)
-	columns, err := rows.Columns()
-
-	if err != nil {
-		panic(err.Error()) // proper error handling instead of panic in your app
-	}
-	values := make([]sql.RawBytes, len(columns))
-
-	scanArgs := make([]interface{}, len(values))
-	result := make([]map[string]string, 0)
-	for i := range values {
-		scanArgs[i] = &values[i]
-	}
-	for rows.Next() {
-		err = rows.Scan(scanArgs...)
-		if err != nil {
-			panic(err.Error())
-		}
-		row := make(map[string]string)
-		var value string
-		for i, col := range values {
-			if col == nil {
-				value = "NULL"
-			} else {
-				value = string(col)
-			}
-			row[columns[i]] = value
-		}
-		result = append(result, row)
-	}
-	if err = rows.Err(); err != nil {
-		panic(err.Error()) // proper error handling instead of panic in your app
-	}
-	fmt.Println(result)
-	return result
-}
-
-func myToken(w http.ResponseWriter, r *http.Request) {
-	body, _ := ioutil.ReadAll(r.Body)
-	userjs, _ := simplejson.NewJson(body)
-	userName, _ := userjs.Get("username").String()
-	openId, _ := userjs.Get("openid").String()
-	//	passWord, _ := userjs.Get("password").String()
-	if userName == "" {
-		fmt.Println("这是获取！")
-		arr := query("OPENID=\"" + openId + "\"")
-		if len(arr) > 0 {
-			aesEnc := aes.AesEncrypt{}
-			uname := arr[0]["USERNAME"]
-			arr, _ := base64.StdEncoding.DecodeString(arr[0]["USERPASSWORD"])
-			pword, err := aesEnc.Decrypt(arr)
-			if err != nil {
-				fmt.Println(err)
-				return
-			}
-			fmt.Println(uname)
-			fmt.Println(pword)
-			fmt.Fprintf(w, getMyToken(uname, pword))
-		} else {
-			fmt.Fprintf(w, "{meta:{success:false,code:404,message:\"您的账号暂未绑定！\"}}")
-		}
-	} else {
-		fmt.Println("这是绑定")
-		passWord, _ := userjs.Get("password").String()
-		fmt.Fprintf(w, getMyToken(userName, passWord))
-	}
-}
-
-func getMyToken(u, p string) string {
-
-	client := &http.Client{}
-
-	req, err := http.NewRequest("POST", "http://112.65.230.184/oauth/token", strings.NewReader("client_id=clientapp&client_secret=123456&grant_type=password&username="+u+"&password="+p))
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	req.Header.Set("Authorization", "Basic Y2xpZW50YXBwOjEyMzQ1Ng==")
-	fmt.Println(req.Body)
-
-	resp, err := client.Do(req)
-
-	defer resp.Body.Close()
-
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		fmt.Println(err)
-	}
-	return string(body)
+	js, _ := simplejson.NewJson(dat)
+	menut, _ := js.Get("menu").MarshalJSON()
+	menu = string(menut)
+	AppId, _ = js.Get("appid").String()
+	Appsecret, _ := js.Get("appsecret").String()
+	TOKEN, _ = js.Get("TOKEN").String()
+	APIKEY, _ = js.Get("APIKEY").String()
+	TUURL, _ = js.Get("TUURL").String()
 }
 
 func main() {
 	http.HandleFunc("/chat", mainHandler)
 	http.HandleFunc("/info", getinfo)
-	http.HandleFunc("/api/user/getToken", myToken)
 	http.Handle("/", http.FileServer(http.Dir("C:/Users/jerry/AppData/Local/.fis3-tmp/www")))
-	setMenu()
 	log.Fatal(http.ListenAndServe(":80", nil))
 }

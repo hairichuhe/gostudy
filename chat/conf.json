@@ -1,0 +1,29 @@
+{
+    "host":"http://192.168.0.117:8084/api",        
+    "auth_host":"http://192.168.0.117:8084",   
+    "client_id":"clientapp",   
+    "client_secret":"123456",
+    "appid":"wxc3b7890c78873a70",
+    "appsecret":"d70472a21a18928616869965116963c8",
+    "TOKEN":"111111",
+	"APIKEY":"9aa081ff30e207f96c46dfdd21a7b65f",
+	"TUURL":"http://www.tuling123.com/openapi/api",
+    "menu":{
+	    "button":[
+			{
+		        "type":"view",
+	            "name":"网站群",
+	            "url":"http://tevei.tunnel.2bdata.com"
+		    },
+		    {	
+		        "type":"click",
+		        "name":"@我~",
+		        "key":"V1001_TODAY_CALLME"
+		    },
+		    {
+				"type":"view",
+		        "name":"大平台",
+		        "url":"http://www.wangxiaojun.top"
+		    }]
+		 }
+}
