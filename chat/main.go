@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 	"utils/httputil"
-	//	"utils/path"
+	"utils/path"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/bitly/go-simplejson"
@@ -76,10 +76,10 @@ type Token struct {
 	ex int64
 }
 
-//func init() {
-//	setconst()
-//	setMenu()
-//}
+func init() {
+	setconst()
+	setMenu()
+}
 
 func checkError(err error) {
 	if err != nil {

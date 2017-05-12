@@ -10,7 +10,7 @@ type AesEncrypt struct {
 }
 
 func (this *AesEncrypt) getKey() []byte {
-	strKey := "1234567890123456"
+	strKey := "!1E@2Q#3E$D4%6C5^7v8&9f0*r4T^H7J4K%Y#F!1DF"
 	keyLen := len(strKey)
 	if keyLen < 16 {
 		panic("res key 长度不能小于16")

@@ -11,11 +11,24 @@ import (
 
 	"utils/httputil"
 
+	"github.com/BurntSushi/toml"
 	"github.com/PuerkitoBio/goquery"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 var db *sql.DB
+var config tomlConfig
+
+type tomlConfig struct {
+	DB database `toml:"database"`
+}
+
+type database struct {
+	Server   string
+	Username string
+	Password string
+	Dataname string
+}
 
 type sqlModel struct {
 	ip       string
@@ -25,7 +38,12 @@ type sqlModel struct {
 }
 
 func init() {
-	db, _ = sql.Open("mysql", "root:root@tcp(192.168.0.231:3306)/safedata?charset=utf8")
+
+	if _, err := toml.DecodeFile("./conf.toml", &config); err != nil {
+		fmt.Println(err)
+		return
+	}
+	db, _ = sql.Open("mysql", config.DB.Username+":"+config.DB.Password+"@tcp("+config.DB.Server+")/"+config.DB.Dataname+"?charset=utf8")
 	//	db, _ = sql.Open("mysql", "root:root@tcp(127.0.0.1:3306)/api?charset=utf8")
 	db.SetMaxOpenConns(200)
 	db.SetMaxIdleConns(100)
@@ -104,8 +122,10 @@ func getLoaction(city string) string {
 }
 
 func handleStr(all string, target string) string {
-	if strings.Index(all, target) == -1 {
+	if strings.Index(all, target) == -1 && strings.Index(all, "ok") != -1 {
 		return "-1"
+	} else if strings.Index(all, target) == -1 && strings.Index(all, "ok") == -1 {
+		return "‘Morality in Media’ recording your IP address and ‘illegal access’ to their site!!"
 	} else {
 		start := strings.Index(all, target) + len(target)
 		newStr := all[start:]
