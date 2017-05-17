@@ -4,6 +4,7 @@ package proxy
 import (
 	"context"
 	"errors"
+	"fmt"
 	"net"
 	"net/http"
 	"net/url"
@@ -94,8 +95,11 @@ func (uh *UpstreamHost) Available() bool {
 
 // ServeHTTP satisfies the httpserver.Handler interface.
 func (p Proxy) ServeHTTP(w http.ResponseWriter, r *http.Request) (int, error) {
+	fmt.Fprintln(1)
 	// start by selecting most specific matching upstream config
 	upstream := p.match(r)
+	fmt.Println(3)
+	fmt.Println(upstream)
 	if upstream == nil {
 		return p.Next.ServeHTTP(w, r)
 	}
@@ -254,6 +258,7 @@ func (p Proxy) ServeHTTP(w http.ResponseWriter, r *http.Request) (int, error) {
 
 // match finds the best match for a proxy config based on r.
 func (p Proxy) match(r *http.Request) Upstream {
+	fmt.Println(3)
 	var u Upstream
 	var longestMatch int
 	for _, upstream := range p.Upstreams {
@@ -274,6 +279,7 @@ func (p Proxy) match(r *http.Request) Upstream {
 //
 // Derived from reverseproxy.go in the standard Go httputil package.
 func createUpstreamRequest(rw http.ResponseWriter, r *http.Request) (*http.Request, context.CancelFunc) {
+	fmt.Println(4)
 	// Original incoming server request may be canceled by the
 	// user or by std lib(e.g. too many idle connections).
 	ctx, cancel := context.WithCancel(r.Context())

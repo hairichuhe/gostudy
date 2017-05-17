@@ -72,5 +72,5 @@ func query(str string) []map[string]string {
 }
 func main() {
 	http.HandleFunc("/api/user", myToken)
-	log.Fatal(http.ListenAndServe(":8062", nil))
+	log.Fatal(http.ListenAndServe(":9090", nil))
 }

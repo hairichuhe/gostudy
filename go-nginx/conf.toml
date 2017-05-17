@@ -1,0 +1,9 @@
+# This is a TOML document.
+
+[database]
+server = "127.0.0.1:3306"   #格式："地址:端口"
+username="root"
+password="root"
+Dataname="demo_la"
+Rdserver="127.0.0.1:6379"
+RdPW="root"

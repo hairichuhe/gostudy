@@ -4,6 +4,8 @@ package aes
 import (
 	"crypto/aes"
 	"crypto/cipher"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 type AesEncrypt struct {
@@ -61,4 +63,9 @@ func (this *AesEncrypt) Decrypt(src []byte) (strDesc string, err error) {
 	aesDecrypter := cipher.NewCFBDecrypter(aesBlockDecrypter, iv)
 	aesDecrypter.XORKeyStream(decrypted, src)
 	return string(decrypted), nil
+}
+
+//hash 字符串对比
+func Compare(hashedPassword, password string) error {
+	return bcrypt.CompareHashAndPassword([]byte(hashedPassword), []byte(password))
 }
