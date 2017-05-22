@@ -2,56 +2,69 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
 	"net"
-	"os"
+	"netscan/protocol"
 	"strconv"
-	"strings"
 	"sync"
 	"time"
+	"utils/gateway"
 
+	"github.com/BurntSushi/toml"
 	"github.com/Sirupsen/logrus"
-	"github.com/urfave/cli"
-)
-
-const (
-	// VERSION is the command version.
-	VERSION = "v0.1.0"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 var (
-	beginPort int
-	endPort   int
-	protos    []string
-	timeout   time.Duration
-	wg        sync.WaitGroup
+	protos  []string
+	timeout time.Duration
+	config  tomlConfig
+	db      *sql.DB
+	wg      sync.WaitGroup
+	gatew   string
+	order   int
+	gatewId int
 )
 
-// preload initializes any global options and configuration
-// before the main or sub commands are run.
-func preload(context *cli.Context) error {
-	if context.GlobalBool("debug") {
-		logrus.SetLevel(logrus.DebugLevel)
-	}
-	return nil
+type tomlConfig struct {
+	DB database `toml:"database"`
+}
+
+type database struct {
+	Server   string
+	Username string
+	Password string
+	Dataname string
+}
+
+type sqlModel struct {
+	ip       string
+	parentId int
+	mold     int
+	orders   int
 }
 
 func checkReachable(proto, addr string) {
-	c, err := net.DialTimeout(proto, addr, timeout)
-	if err == nil {
-		c.Close()
-		logrus.Infof("%s://%s is alive and reachable", proto, addr)
+	switch proto {
+	case "ip4:icmp":
+		if protocol.Ping(addr) {
+			sql := sqlModel{addr, gatewId, 0, order}
+			logrus.Infof("%s://%s is alive and reachable", proto, addr)
+			if addr != gatew {
+				insert(sql)
+			}
+			return
+		}
+		logrus.Infof(addr + "此机器未开启！")
+	default:
+		fmt.Printf("暂无此协议！")
 	}
 }
 
 func scanIP(ip string) {
 	for _, proto := range protos {
-		for port := beginPort; port <= endPort; port++ {
-			addr := fmt.Sprintf("%s:%d", ip, port)
-			logrus.Debugf("scanning addr: %s://%s", proto, addr)
-
-			checkReachable(proto, addr)
-		}
+		checkReachable(proto, ip)
 	}
 }
 
@@ -62,7 +75,6 @@ func scan(s string) {
 		scanIP(ip.String())
 		return
 	}
-
 	for ip := ip.Mask(ipNet.Mask); ipNet.Contains(ip); incIP(ip) {
 		wg.Add(1)
 		go func(ip string) {
@@ -84,83 +96,74 @@ func incIP(ip net.IP) {
 	}
 }
 
-func parsePortRange(ports string) (begin, end int, err error) {
-	p := strings.SplitN(ports, "-", 2)
-	if len(p) < 2 {
-		logrus.Debugf("Looks like only one port %q was given for ports.", ports)
-		begin, err = strconv.Atoi(p[0])
-		end = begin
-		return begin, end, err
+func main() {
+	if _, err := toml.DecodeFile("./netscan-conf.toml", &config); err != nil {
+		fmt.Println(err)
+		return
 	}
-
-	begin, err = strconv.Atoi(p[0])
+	//	go restconf()
+	db, _ = sql.Open("mysql", config.DB.Username+":"+config.DB.Password+"@tcp("+config.DB.Server+")/"+config.DB.Dataname+"?charset=utf8")
+	//	db, _ = sql.Open("mysql", "root:root@tcp(127.0.0.1:3306)/api?charset=utf8")
+	db.SetMaxOpenConns(200)
+	db.SetMaxIdleConns(100)
+	db.Ping()
+	protos = []string{"ip4:icmp"}
+	timeo, err := time.ParseDuration("1s")
 	if err != nil {
-		return begin, end, err
-	}
-	end, err = strconv.Atoi(p[1])
-	if err != nil {
-		return begin, end, err
+		fmt.Println(err)
+	} else {
+		timeout = timeo
 	}
 
-	if begin > end {
-		return begin, end, fmt.Errorf("End port can not be greater than the beginning port: %d > %d", end, begin)
-	}
+	//获取网关ip
+	ip, _ := gateway.DiscoverGateway()
+	gatew = ip.String()
 
-	return begin, end, err
+	//获取扫描次数
+	orders := queryOrder()
+	nowNum, _ := strconv.Atoi(orders)
+	order = nowNum + 1
+	gatewsql := sqlModel{gatew, -1, 1, order}
+	gatewId = insert(gatewsql)
+	scan("192.168.0.1/24")
 }
 
-func main() {
-	app := cli.NewApp()
-	app.Name = "netscan"
-	app.Version = VERSION
-	app.Author = "wangxiaojun"
-	app.Email = "14320794@qq.com"
-	app.Usage = "Scan network ips and ports."
-	app.Before = preload
-	app.Flags = []cli.Flag{
-		cli.BoolFlag{
-			Name:  "debug, d",
-			Usage: "run in debug mode",
-		},
-		cli.StringFlag{
-			Name:  "timeout, t",
-			Value: "1s",
-			Usage: "override timeout used for check",
-		},
-		cli.StringFlag{
-			Name:  "port, p",
-			Value: "1-1000",
-			Usage: "port range to check",
-		},
-		cli.StringFlag{
-			Name:  "proto",
-			Value: "tcp,udp",
-			Usage: "protocol/s to check",
-		},
+func queryOrder() string {
+	var order sql.RawBytes
+	rows, err := db.Query("SELECT MAX(orders) FROM netasset")
+	defer rows.Close()
+	if err != nil {
+		fmt.Println(err)
 	}
-	app.Action = func(c *cli.Context) {
-		if len(c.Args()) == 0 {
-			logrus.Errorf("Pass an ip or cidr, ex: 192.168.104.1/24")
-			cli.ShowAppHelp(c)
-			return
-		}
-
-		var err error
-		timeout, err = time.ParseDuration(c.String("timeout"))
+	//	fmt.Println(len(rows))
+	for rows.Next() {
+		rows.Columns()
+		err := rows.Scan(&order)
 		if err != nil {
-			logrus.Error(err)
-			return
+			fmt.Println(err)
 		}
 
-		beginPort, endPort, err = parsePortRange(c.String("port"))
-		if err != nil {
-			logrus.Error(err)
-			return
-		}
-
-		protos = strings.Split(c.String("proto"), ",")
-
-		scan(c.Args().First())
+		break
 	}
-	app.Run(os.Args)
+	if order == nil {
+		return "0"
+	} else {
+		return string(order)
+	}
+}
+
+func insert(sql sqlModel) int {
+	stmt, err := db.Prepare(`INSERT netasset (ip,parent_id,type,orders) values (?,?,?,?)`)
+	defer stmt.Close()
+	checkErr(err)
+	result, err1 := stmt.Exec(sql.ip, sql.parentId, sql.mold, sql.orders)
+	checkErr(err1)
+	id, _ := result.LastInsertId()
+	return int(id)
+}
+func checkErr(err error) {
+	if err != nil {
+		fmt.Println(err)
+		panic(err)
+	}
 }

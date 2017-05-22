@@ -1,0 +1,7 @@
+# This is a TOML document.
+
+[database]
+server = "127.0.0.1:3306"
+username="root"
+password="root"
+Dataname="api"
