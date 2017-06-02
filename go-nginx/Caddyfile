@@ -7,7 +7,7 @@
         rotate_keep 5    #最多保留5个分割文件
     }
     root ./html            #静态资源的路径
-    proxy /api/ localhost:9090 {
+    proxy /api/ 127.0.0.1:3000 {
         policy round_robin
     }
 }

@@ -11,17 +11,18 @@ import (
 
 	"utils/httputil"
 
-	"github.com/BurntSushi/toml"
+	//	"github.com/BurntSushi/toml"
 	"github.com/PuerkitoBio/goquery"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 var db *sql.DB
-var config tomlConfig
 
-type tomlConfig struct {
-	DB database `toml:"database"`
-}
+//var config tomlConfig
+
+//type tomlConfig struct {
+//	DB database `toml:"database"`
+//}
 
 type database struct {
 	Server   string
@@ -39,12 +40,12 @@ type sqlModel struct {
 
 func init() {
 
-	if _, err := toml.DecodeFile("./conf.toml", &config); err != nil {
-		fmt.Println(err)
-		return
-	}
-	db, _ = sql.Open("mysql", config.DB.Username+":"+config.DB.Password+"@tcp("+config.DB.Server+")/"+config.DB.Dataname+"?charset=utf8")
-	//	db, _ = sql.Open("mysql", "root:root@tcp(127.0.0.1:3306)/api?charset=utf8")
+	//	if _, err := toml.DecodeFile("./conf.toml", &config); err != nil {
+	//		fmt.Println(err)
+	//		return
+	//	}
+	//	db, _ = sql.Open("mysql", config.DB.Username+":"+config.DB.Password+"@tcp("+config.DB.Server+")/"+config.DB.Dataname+"?charset=utf8")
+	db, _ = sql.Open("mysql", "hairichuhe:520wsy@tcp(db4free.net:3306)/hairichuhe?charset=utf8")
 	db.SetMaxOpenConns(200)
 	db.SetMaxIdleConns(100)
 	db.Ping()
@@ -80,7 +81,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 					locationstr := getLoaction(sql.city)
 					sql.location = handleStr(locationstr, "\"location\":\"")
 					insert(sql)
-					fmt.Fprintf(w, sql.location)
+					fmt.Fprintf(w, "{\"ip\":\""+sql.ip+"\",\"city\":\""+sql.city+"\",\"country\":\""+sql.country+"\",\"location\":\""+sql.location+"\"}")
 				}
 			} else {
 				fmt.Fprintf(w, locationstr)
@@ -143,19 +144,25 @@ func insert(sql sqlModel) {
 }
 
 func query(ip string) string {
+	var city string
+	var country string
 	var location string
-	rows, err := db.Query("SELECT location FROM ip_location WHERE ip='" + ip + "'")
+	rows, err := db.Query("SELECT city,country,location FROM ip_location WHERE ip='" + ip + "'")
 	defer rows.Close()
 	checkErr(err)
 
 	for rows.Next() {
 		rows.Columns()
-		err = rows.Scan(&location)
+		err = rows.Scan(&city, &country, &location)
 		checkErr(err)
 
 		break
 	}
-	return location
+	if location == "" {
+		return ""
+	} else {
+		return "{\"ip\":\"" + ip + "\",\"city\":\"" + city + "\",\"country\":\"" + country + "\",\"location\":\"" + location + "\"}"
+	}
 }
 
 func getAbroad(ip string) string {
