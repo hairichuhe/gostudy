@@ -7,7 +7,7 @@ import (
 )
 
 func Test_aes(t *testing.T) {
-	if Issnmp("192.168.0.137") {
+	if Issnmp("192.168.0.42") {
 		result := Mib()
 		fmt.Println(result.gateway)
 		fmt.Println(result.netMask)

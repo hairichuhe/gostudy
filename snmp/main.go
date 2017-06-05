@@ -12,7 +12,7 @@ import (
 
 func main() {
 
-	s, err := gosnmp.NewGoSNMP("192.168.0.53", "public", gosnmp.Version2c, 5)
+	s, err := gosnmp.NewGoSNMP("192.168.0.52", "public", gosnmp.Version2c, 5)
 	if err != nil {
 		fmt.Print(111)
 	}

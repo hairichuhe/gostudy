@@ -20,14 +20,19 @@ type Info struct {
 func Issnmp(ipn string) bool {
 	ip = ipn
 	sr, err := gosnmp.NewGoSNMP(ipn, "public", gosnmp.Version2c, 5)
-	fmt.Println(err)
 	if err != nil {
 		fmt.Println(err)
 		return false
 	}
-	fmt.Println(333)
-	s = sr
-	return true
+	//系统信息
+	_, err = sr.Get(".1.3.6.1.2.1.1.1.0")
+	if err == nil {
+		s = sr
+		return true
+	} else {
+		fmt.Println(err)
+		return false
+	}
 }
 
 func Mib() Info {
