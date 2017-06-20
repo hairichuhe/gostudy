@@ -11,6 +11,7 @@ import (
 )
 
 func Nopass(w http.ResponseWriter, r *http.Request) bool {
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	aesEnc := aes.AesEncrypt{}
 	tokenori, err0 := base64.StdEncoding.DecodeString(r.Header.Get("Authorization"))
 	tokenstr, err1 := aesEnc.Decrypt(tokenori)

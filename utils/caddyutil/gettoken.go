@@ -56,40 +56,68 @@ func init() {
 
 func GetToken(w http.ResponseWriter, r *http.Request) bool {
 	if r.URL.Path == "/oauth/token" {
+		w.Header().Set("Content-Type", "application/json; charset=utf-8")
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
+		w.Header().Set("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS")
+
 		userName := r.FormValue("username")
 		passWord := r.FormValue("password")
 
 		if userName != "" && passWord != "" {
 			dId, dpassword := query(userName)
-			drtoken := queryrd("token_" + dId)
-			if drtoken == "" {
+			if dId == "" {
+				//设置 http请求状态
+				w.WriteHeader(400)
+				//写入页面数据
+				w.Write([]byte("{\"meta\":{\"code\":400,\"success\":false,\"message\":\"用户名不存在，请联系管理员！\"}}"))
+			} else {
 				cop := aes.Compare(dpassword, passWord)
 				if cop == nil {
-					ip := r.RemoteAddr
-					if strings.Index(ip, ":") != -1 {
-						ip = ip[:strings.Index(ip, ":")]
+					drtoken := queryrd("token_" + dId)
+					if drtoken == "" {
+						ip := r.RemoteAddr
+						if strings.Index(ip, ":") != -1 {
+							ip = ip[:strings.Index(ip, ":")]
+						}
+						aesEnc := aes.AesEncrypt{}
+						str := "{id:" + dId + ",ip:" + ip + ",over:" + strconv.FormatInt(time.Now().Unix()+7200, 10) + "}"
+						tokenbyte, _ := aesEnc.Encrypt(str)
+						toke := base64.StdEncoding.EncodeToString(tokenbyte)
+						w.Write([]byte("{\"meta\":{\"code\":0,\"success\":true,\"message\":\"ok!\"},\"data\":{\"access_token\":\"" + toke + "\",\"expires_in\":7200}}"))
+						savekey("token_"+dId, toke, 7200)
+					} else {
+						ti := queryTTL("token_" + dId)
+						w.Write([]byte("{\"meta\":{\"code\":0,\"success\":true,\"message\":\"ok!\"},\"data\":{\"access_token\":\"" + drtoken + "\",\"expires_in\":" + strconv.FormatInt(ti, 10) + "}}"))
 					}
-					aesEnc := aes.AesEncrypt{}
-					str := "{id:" + dId + ",ip:" + ip + ",over:" + strconv.FormatInt(time.Now().Unix()+7200, 10) + "}"
-					tokenbyte, _ := aesEnc.Encrypt(str)
-					toke := base64.StdEncoding.EncodeToString(tokenbyte)
-					w.Write([]byte("{\"access_token\":\"" + toke + "\",\"expires_in\":7200}"))
-					savekey("token_"+dId, toke, 7200)
 				} else {
-					//设置 http请求状态
 					w.WriteHeader(400)
 					//写入页面数据
-					w.Write([]byte("{\"code\":400,\"success\":false,\"message\":\"密码错误，请重新登录！\"}"))
+					w.Write([]byte("{\"meta\":{\"code\":400,\"success\":false,\"message\":\"密码错误！\"}}"))
 				}
-			} else {
-				ti := queryTTL("token_" + dId)
-				w.Write([]byte("{\"access_token\":\"" + drtoken + "\",\"expires_in\":" + strconv.FormatInt(ti, 10) + "}"))
 			}
 		} else {
 			//设置 http请求状态
 			w.WriteHeader(400)
 			//写入页面数据
-			w.Write([]byte("{\"code\":400,\"success\":false,\"message\":\"用户名或密码不能为空，请重新登录！\"}"))
+			w.Write([]byte("{\"meta\":{\"code\":400,\"success\":false,\"message\":\"用户名或密码不能为空，请重新登录！\"}}"))
+		}
+		return true
+	}
+	if r.URL.Path == "/img/upload" {
+		w.Header().Set("Content-Type", "application/json; charset=utf-8")
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
+		w.Header().Set("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS")
+
+		if r.Method == "POST" {
+			file, handle, err := r.FormFile("file")
+			checkErr(err)
+			f, err := os.OpenFile("./test/"+handle.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+			io.Copy(f, file)
+			checkErr(err)
+			defer f.Close()
+			defer file.Close()
 		}
 		return true
 	}

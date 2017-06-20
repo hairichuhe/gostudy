@@ -2,26 +2,22 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"net"
-	"time"
 )
 
 func main() {
-	checkReachable("udp", "192.168.0.119:161")
+	//	scan("192.168.0.1/24")
+	fmt.Println(float64(0) == math.Mod(float64(10), float64(5)))
 }
 
-func checkReachable(proto, addr string) {
-	c := make(chan error)
-	timeout, _ := time.ParseDuration("1s")
-	_, err := net.DialTimeout(proto, addr, timeout)
-	c <- err
-	for i := range c {
-		fmt.Println(i)
+func scan(s string) {
+	ip, ipNet, err := net.ParseCIDR(s)
+	if err != nil {
+		fmt.Println(err)
 	}
-	//	if err == nil {
-	//		c.Close()
-	//		fmt.Println("%s://%s is alive and reachable", proto, addr)
-	//	} else {
-	//		fmt.Println("出错了！")
-	//	}
+	fmt.Println(ip)
+	fmt.Println(ipNet.Mask.Size())
+	par, all := ipNet.Mask.Size()
+	fmt.Println(math.Pow(float64(2), float64(all-par)))
 }

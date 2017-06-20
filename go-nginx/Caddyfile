@@ -7,6 +7,10 @@
         rotate_keep 5    #最多保留5个分割文件
     }
     root ./html            #静态资源的路径
+	upload /file/upload {  #图片上传路径
+		yes_without_tls
+		to "./html/static/img"
+	}
     proxy /api/ 127.0.0.1:3000 {
         policy round_robin
     }

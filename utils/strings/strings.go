@@ -31,3 +31,38 @@ func SubStr(s string, start, end int) string {
 
 	return string(rs[start:end])
 }
+
+func NTos(n string) string {
+	result := ""
+	for i := 0; i < len(n); i++ {
+		result += nTs(string(n[i]))
+	}
+	return result
+}
+
+func nTs(n string) string {
+	switch n {
+	case "0":
+		return "f"
+	case "1":
+		return "b"
+	case "2":
+		return "h"
+	case "3":
+		return "w"
+	case "4":
+		return "k"
+	case "5":
+		return "n"
+	case "6":
+		return "a"
+	case "7":
+		return "p"
+	case "8":
+		return "u"
+	case "9":
+		return "s"
+	default:
+		return ""
+	}
+}

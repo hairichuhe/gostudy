@@ -20,3 +20,10 @@
 17/May/2017:08:43:17 +0800 [PANIC /api/user] D:/go_workspace/src/utils/caddyutil/validatetoken.go:52 - runtime error: slice bounds out of range
 17/May/2017:08:50:07 +0800 [PANIC /api/user] D:/go_workspace/src/utils/caddyutil/validatetoken.go:49 - runtime error: slice bounds out of range
 23/May/2017:09:52:31 +0800 [ERROR 502 /api/user] dial tcp 127.0.0.1:3000: connectex: No connection could be made because the target machine actively refused it.
+14/Jun/2017:20:13:30 +0800 [ERROR 502 /api/revoke] dial tcp 127.0.0.1:9094: connectex: No connection could be made because the target machine actively refused it.
+15/Jun/2017:09:52:46 +0800 [ERROR 502 /api/revoke] dial tcp 127.0.0.1:3000: connectex: No connection could be made because the target machine actively refused it.
+16/Jun/2017:13:46:46 +0800 [ERROR 422 /file/upload] MIME Multipart exploding failed on part 1: permission denied
+16/Jun/2017:13:49:36 +0800 [ERROR 422 /file/upload] MIME Multipart exploding failed on part 1: permission denied
+16/Jun/2017:13:51:26 +0800 [ERROR 422 /file/upload] MIME Multipart exploding failed on part 1: permission denied
+16/Jun/2017:15:04:19 +0800 [ERROR 422 /file/upload] permission denied
+16/Jun/2017:15:39:37 +0800 [ERROR 422 /file/upload] permission denied
