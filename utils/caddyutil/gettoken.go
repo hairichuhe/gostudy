@@ -5,14 +5,18 @@ import (
 	"database/sql"
 	"encoding/base64"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 	"time"
 	"utils/aes"
+	"utils/path"
 	"utils/redipool"
+	str "utils/strings"
 
 	"github.com/garyburd/redigo/redis"
 
@@ -106,18 +110,46 @@ func GetToken(w http.ResponseWriter, r *http.Request) bool {
 	}
 	if r.URL.Path == "/img/upload" {
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
-		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Origin", "http://127.0.0.1:8080")
 		w.Header().Set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
 		w.Header().Set("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS")
+		w.Header().Set("Access-Control-Allow-Credentials", "true")
 
 		if r.Method == "POST" {
-			file, handle, err := r.FormFile("file")
+			file, handle, err := r.FormFile("files")
 			checkErr(err)
-			f, err := os.OpenFile("./test/"+handle.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+			id := r.FormValue("id")
+			imgSrc := r.FormValue("imgScr")
+			if strings.Index(imgSrc, "?") != -1 {
+				imgSrc = str.SubStr(imgSrc, 0, strings.Index(imgSrc, "?"))
+			}
+			nowP, err := path.GetCurrentPath()
+			checkErr(err)
+			suffix := str.GetSuffix(handle.Filename)
+			var imgName string
+
+			if imgSrc == "/img/user.png" && id == "-1" {
+				imgName = strconv.FormatInt(time.Now().Unix(), 10) + suffix
+			}
+
+			if imgSrc != "/img/user.png" && id == "-1" {
+				imgName = str.GetFileName(imgSrc)
+			}
+
+			if id != "-1" {
+				imgName = str.NTos(id) + suffix
+				if str.GetFileName(imgSrc) != str.NTos(id)+suffix && imgSrc != "/img/user.png" {
+					os.Remove(nowP + "/html" + imgSrc)
+				}
+			}
+
+			f, err := os.OpenFile(nowP+"/html/img/"+imgName, os.O_WRONLY|os.O_CREATE, 0666)
 			io.Copy(f, file)
 			checkErr(err)
 			defer f.Close()
 			defer file.Close()
+			fmt.Println("上传成功！")
+			w.Write([]byte("{\"meta\":{\"code\":0,\"success\":true,\"message\":\"ok!\"},\"data\":\"" + "/img/" + imgName + "\"}"))
 		}
 		return true
 	}

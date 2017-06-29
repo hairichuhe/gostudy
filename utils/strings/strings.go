@@ -1,6 +1,22 @@
 // strings project strings.go
 package strings
 
+import (
+	"strings"
+)
+
+func GetSuffix(s string) string {
+	start := strings.LastIndex(s, ".")
+	end := len(s)
+	return SubStr(s, start, end)
+}
+
+func GetFileName(s string) string {
+	start := strings.LastIndex(s, "/") + 1
+	end := len(s)
+	return SubStr(s, start, end)
+}
+
 func SubStr(s string, start, end int) string {
 	rs := []byte(s)
 	rl := len(rs)
@@ -40,6 +56,14 @@ func NTos(n string) string {
 	return result
 }
 
+func STon(n string) string {
+	result := ""
+	for i := 0; i < len(n); i++ {
+		result += sTn(string(n[i]))
+	}
+	return result
+}
+
 func nTs(n string) string {
 	switch n {
 	case "0":
@@ -62,6 +86,33 @@ func nTs(n string) string {
 		return "u"
 	case "9":
 		return "s"
+	default:
+		return ""
+	}
+}
+
+func sTn(n string) string {
+	switch n {
+	case "f":
+		return "0"
+	case "b":
+		return "1"
+	case "h":
+		return "2"
+	case "w":
+		return "3"
+	case "k":
+		return "4"
+	case "n":
+		return "5"
+	case "a":
+		return "6"
+	case "p":
+		return "7"
+	case "u":
+		return "8"
+	case "s":
+		return "9"
 	default:
 		return ""
 	}

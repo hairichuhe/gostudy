@@ -7,6 +7,10 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
+	"time"
+
+	"utils/strings"
 )
 
 func upload(w http.ResponseWriter, r *http.Request) {
@@ -14,7 +18,8 @@ func upload(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		file, handle, err := r.FormFile("file")
 		checkErr(err)
-		f, err := os.OpenFile("./test/"+handle.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+		suffix := strings.GetSuffix(handle.Filename)
+		f, err := os.OpenFile("./test/"+strconv.FormatInt(time.Now().Unix(), 10)+suffix, os.O_WRONLY|os.O_CREATE, 0666)
 		io.Copy(f, file)
 		checkErr(err)
 		defer f.Close()

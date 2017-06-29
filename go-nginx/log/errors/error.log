@@ -27,3 +27,6 @@
 16/Jun/2017:13:51:26 +0800 [ERROR 422 /file/upload] MIME Multipart exploding failed on part 1: permission denied
 16/Jun/2017:15:04:19 +0800 [ERROR 422 /file/upload] permission denied
 16/Jun/2017:15:39:37 +0800 [ERROR 422 /file/upload] permission denied
+20/Jun/2017:19:17:15 +0800 [PANIC /img/upload] D:/go_workspace/src/utils/caddyutil/gettoken.go:152 - http: no such file
+20/Jun/2017:19:19:37 +0800 [PANIC /img/upload] D:/go_workspace/src/utils/caddyutil/gettoken.go:153 - http: no such file
+20/Jun/2017:19:20:23 +0800 [PANIC /img/upload] D:/go_workspace/src/utils/caddyutil/gettoken.go:153 - http: no such file
