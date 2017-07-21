@@ -2,7 +2,6 @@
 package main
 
 import (
-	_ "blitznote.com/src/caddy.upload"
 	"github.com/mholt/caddy/caddy/caddymain"
 )
 
